@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cuota extends Model
+class Cuota extends Model
 {
 	protected $table = 'cuotas';
 	
