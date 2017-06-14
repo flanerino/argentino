@@ -12,5 +12,5 @@ class cuota extends Model
 	'mes',
 	'anio',
 	'deportista_id',
-	'fecha_pago',];
+	'fecha_pago'];
 }

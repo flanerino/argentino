@@ -36,7 +36,7 @@ return array(
     'CreateDeportesTable' => $baseDir . '/database/migrations/2017_06_13_134038_create_deportes_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateSociosTable' => $baseDir . '/database/migrations/2017_06_13_133820_create_socios_table.php',
-    'CreateSolicitudsTable' => $baseDir . '/database/migrations/2017_06_13_134126_create_solicituds_table.php',
+    'CreateSolicitudesTable' => $baseDir . '/database/migrations/2017_06_13_134126_create_solicitudes_table.php',
     'CreateTipoSociosTable' => $baseDir . '/database/migrations/2017_06_13_133926_create_tipo_socios_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'Cron\\AbstractField' => $vendorDir . '/mtdowling/cron-expression/src/Cron/AbstractField.php',

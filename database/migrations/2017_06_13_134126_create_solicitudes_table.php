@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSolicitudsTable extends Migration
+class CreateSolicitudesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -19,7 +19,7 @@ class CreateSolicitudsTable extends Migration
 			$table->string('apellido');
 			$table->string('nacionalidad');
 			$table->date('fecha_nac');
-			$table->string('email')->unique();
+			$table->string('email');
 			$table->integer('dni');
 			$table->integer('telefono');
 			$table->string('domicilio');

@@ -19,7 +19,7 @@ class CreateSociosTable extends Migration
 			$table->string('apellido');
 			$table->string('nacionalidad');
 			$table->date('fecha_nac');
-			$table->string('email')->unique();
+			$table->string('email');
 			$table->integer('dni');
 			$table->integer('telefono');
 			$table->string('domicilio');
