@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @show
     
-    <title>CAYCA</title>
+    <title>CAYCA | {{$title}}</title>
     
     @section('styles')
     <!-- Bootstrap -->
@@ -97,7 +97,6 @@
     </div>    
            
     @section('scripts')
-	
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -135,8 +134,7 @@
     <!-- bootstrap-daterangepicker -->
     <script src="/vendors/moment/min/moment.min.js"></script>
     <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-	<!-- DataTables -->
-	<script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+
     <!-- Custom Theme Scripts -->
     <script src="/js/custom.js"></script>       
     @show    
