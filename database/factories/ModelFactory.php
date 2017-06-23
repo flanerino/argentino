@@ -22,3 +22,12 @@ $factory->define(Argentino\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+/** Model Factory Socios */
+$factory->define(App\Socio::class, function (Faker\Generator $faker) {
+
+    return [
+        'nombre' => $faker->name,
+        'apellido' => $faker->name
+    ];
+});

@@ -3,11 +3,12 @@
 namespace Argentino;
 
 use Illuminate\Database\Eloquent\Model;
+use Argentino\Deporte;
 
 class Socio extends Model
 {
     protected $table = 'socios';
-	
+
     protected $fillable=[
 	'nombre',
 	'apellido',
@@ -22,4 +23,10 @@ class Socio extends Model
 	'protector',
 	'deporte_id',
 	'tipo_socios_id'];
+
+  public function deporte(){
+
+    return $this->belongsTo(Deporte::class);
+
+  }
 }

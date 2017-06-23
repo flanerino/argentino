@@ -4,6 +4,7 @@ namespace Argentino\Http\Controllers;
 
 use Argentino\socio;
 use Illuminate\Http\Request;
+use Argentino\deporte;
 
 
 class SociosController extends Controller
@@ -25,7 +26,7 @@ class SociosController extends Controller
      */
     public function show_socios()
     {
-		$socios = Socio::orderBy('id', 'asc')->paginate(50);
+		$socios = Socio::with('deporte')->orderBy('id', 'asc')->paginate(50);
         return view('socios/socios_list')->with(['socios' => $socios]);
     }
 }
