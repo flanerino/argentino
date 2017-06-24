@@ -25,7 +25,7 @@ class CreateSolicitudesTable extends Migration
 			$table->string('domicilio');
 			$table->string('domicilio_cobro');
 			$table->integer('estado_civil');
-			$table->string('protector');
+			$table->boolean('protector');
 			$table->integer('deporte_id');
 			$table->integer('tipo_socios_id');
             $table->timestamps();
