@@ -9,9 +9,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @show
-    
+
     <title>CAYCA | {{$title}}</title>
-    
+
     @section('styles')
     <!-- Bootstrap -->
     <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,12 +30,12 @@
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
-    <link href="/css/custom.css" rel="stylesheet">         
+    <link href="/css/custom.css" rel="stylesheet">
     @show
-</head>    
+</head>
 
 <body class="nav-md {{ $class_body or "" }}">
-    
+
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -52,8 +52,8 @@
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>Tu vieja</h2>
+                <span>Bienvenido</span>
+                <h2>{{ Auth::user()->name }}</h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -61,7 +61,7 @@
             <br />
 
             <!-- Sidebar -->
-            @include('partials/sidebar')            
+            @include('partials/sidebar')
 
             <!-- /menu footer buttons -->
             <div class="sidebar-footer hidden-small">
@@ -84,7 +84,7 @@
 
         <!-- top navigation -->
         @include('partials/header')
-          
+
         <!-- page content -->
         <div class="right_col" role="main">
             @yield('content')
@@ -94,8 +94,8 @@
         <!-- Footer -->
         @include('partials/footer')
       </div>
-    </div>    
-           
+    </div>
+
     @section('scripts')
     <!-- jQuery -->
     <script src="/vendors/jquery/dist/jquery.min.js"></script>
@@ -136,8 +136,28 @@
     <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <!-- Custom Theme Scripts -->
-    <script src="/js/custom.js"></script>       
-    @show    
+    <script src="/js/custom.js"></script>
+
+    <!-- Input-Mask -->
+    <script src="../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+
+    <!-- Datatables
+    <script src="../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="../vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="../vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="../vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="../vendors/jszip/dist/jszip.min.js"></script>
+    <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../vendors/pdfmake/build/vfs_fonts.js"></script> -->
+    @show
 </body>
 
 </html>
