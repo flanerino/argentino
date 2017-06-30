@@ -35,20 +35,21 @@
 
 
                       <tbody>
-                      <hr role="row" class="even">
+										    <hr role="row" class="even">
                         <td class="col-sm-1" ><b> Nro Socio </b></td>
                         <td class="col-sm-3"><b> Apellido/s </b></td>
 												<td class="col-sm-4"><b> Nombre/s </b></td>
 												<td><b> Telefono </b></td>
 												<td class="col-sm-2"><b> Tipo Socio </b></td>
+												<td><a href="{{ route('create_socio_path') }}" class="btn btn-success"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></td>
 
                       </hr>
 
                         @foreach($socios as $socio)
-                        <tr role="row" class="odd">
-                            <td class="sorting_1">	{{$socio->id}}	</td>
+                      			<tr role="row" class="odd">
+                            <td class="sorting_1">   <a  href="{{ route('socio_path', ['socio' => $socio->id] ) }}">	{{$socio->id}} </a>	</td>
                             <td>	{{$socio->apellido}}	</td>
-                            <td>	{{$socio->nombre}}	</td>
+                            <td>	{{$socio->nombre}}	 </td>
                             <td>	{{$socio->telefono}}	</td>
                             <td>	@if($socio->protector)
 																		<b> Protector </b>

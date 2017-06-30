@@ -7,11 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Argentino\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
-<<<<<<< HEAD
-    'Argentino\\Cuota' => $baseDir . '/app/cuota.php',
-=======
     'Argentino\\Cuota' => $baseDir . '/app/Cuota.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
     'Argentino\\Deporte' => $baseDir . '/app/deporte.php',
     'Argentino\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'Argentino\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -32,13 +28,8 @@ return array(
     'Argentino\\Providers\\EventServiceProvider' => $baseDir . '/app/Providers/EventServiceProvider.php',
     'Argentino\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'Argentino\\Socio' => $baseDir . '/app/socio.php',
-<<<<<<< HEAD
-    'Argentino\\Solicitud' => $baseDir . '/app/solicitud.php',
-    'Argentino\\Tipo_Socio' => $baseDir . '/app/tipo_socio.php',
-=======
     'Argentino\\Solicitud' => $baseDir . '/app/Solicitud.php',
     'Argentino\\Tipo_Socio' => $baseDir . '/app/TipoSocio.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
     'Argentino\\User' => $baseDir . '/app/User.php',
     'Barryvdh\\DomPDF\\Facade' => $vendorDir . '/barryvdh/laravel-dompdf/src/Facade.php',
     'Barryvdh\\DomPDF\\PDF' => $vendorDir . '/barryvdh/laravel-dompdf/src/PDF.php',
@@ -2556,8 +2547,6 @@ return array(
     'SebastianBergmann\\Version' => $vendorDir . '/sebastian/version/src/Version.php',
     'SociosTableSeeder' => $baseDir . '/database/seeds/SociosTableSeeder.php',
     'SolicitudesTableSeeder' => $baseDir . '/database/seeds/SolicitudesTableSeeder.php',
-<<<<<<< HEAD
-=======
     'Svg\\DefaultStyle' => $vendorDir . '/phenx/php-svg-lib/src/Svg/DefaultStyle.php',
     'Svg\\Document' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Document.php',
     'Svg\\Gradient\\Stop' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Gradient/Stop.php',
@@ -2586,7 +2575,6 @@ return array(
     'Svg\\Tag\\StyleTag' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/StyleTag.php',
     'Svg\\Tag\\Text' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/Text.php',
     'Svg\\Tag\\UseTag' => $vendorDir . '/phenx/php-svg-lib/src/Svg/Tag/UseTag.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
     'Symfony\\Component\\Console\\Application' => $vendorDir . '/symfony/console/Application.php',
     'Symfony\\Component\\Console\\Command\\Command' => $vendorDir . '/symfony/console/Command/Command.php',
     'Symfony\\Component\\Console\\Command\\HelpCommand' => $vendorDir . '/symfony/console/Command/HelpCommand.php',

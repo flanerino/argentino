@@ -21,8 +21,7 @@ class Socio extends Model
 	'domicilio_cobro',
 	'estado_civil',
 	'protector',
-	'deporte_id',
-	'tipo_socios_id'];
+	'deporte_id'];
 
   public function deporte(){
 

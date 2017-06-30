@@ -302,11 +302,7 @@ class ComposerStaticInit727ef79d8b29a3a3b86ef2c55b5d5ce8
 
     public static $classMap = array (
         'Argentino\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
-<<<<<<< HEAD
-        'Argentino\\Cuota' => __DIR__ . '/../..' . '/app/cuota.php',
-=======
         'Argentino\\Cuota' => __DIR__ . '/../..' . '/app/Cuota.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
         'Argentino\\Deporte' => __DIR__ . '/../..' . '/app/deporte.php',
         'Argentino\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'Argentino\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
@@ -327,13 +323,8 @@ class ComposerStaticInit727ef79d8b29a3a3b86ef2c55b5d5ce8
         'Argentino\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
         'Argentino\\Providers\\RouteServiceProvider' => __DIR__ . '/../..' . '/app/Providers/RouteServiceProvider.php',
         'Argentino\\Socio' => __DIR__ . '/../..' . '/app/socio.php',
-<<<<<<< HEAD
-        'Argentino\\Solicitud' => __DIR__ . '/../..' . '/app/solicitud.php',
-        'Argentino\\Tipo_Socio' => __DIR__ . '/../..' . '/app/tipo_socio.php',
-=======
         'Argentino\\Solicitud' => __DIR__ . '/../..' . '/app/Solicitud.php',
         'Argentino\\Tipo_Socio' => __DIR__ . '/../..' . '/app/TipoSocio.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
         'Argentino\\User' => __DIR__ . '/../..' . '/app/User.php',
         'Barryvdh\\DomPDF\\Facade' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/Facade.php',
         'Barryvdh\\DomPDF\\PDF' => __DIR__ . '/..' . '/barryvdh/laravel-dompdf/src/PDF.php',
@@ -2851,8 +2842,6 @@ class ComposerStaticInit727ef79d8b29a3a3b86ef2c55b5d5ce8
         'SebastianBergmann\\Version' => __DIR__ . '/..' . '/sebastian/version/src/Version.php',
         'SociosTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SociosTableSeeder.php',
         'SolicitudesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/SolicitudesTableSeeder.php',
-<<<<<<< HEAD
-=======
         'Svg\\DefaultStyle' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/DefaultStyle.php',
         'Svg\\Document' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Document.php',
         'Svg\\Gradient\\Stop' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Gradient/Stop.php',
@@ -2881,7 +2870,6 @@ class ComposerStaticInit727ef79d8b29a3a3b86ef2c55b5d5ce8
         'Svg\\Tag\\StyleTag' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Tag/StyleTag.php',
         'Svg\\Tag\\Text' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Tag/Text.php',
         'Svg\\Tag\\UseTag' => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg/Tag/UseTag.php',
->>>>>>> 12efd90f0f34c320e19fedb7e86383e2362ef982
         'Symfony\\Component\\Console\\Application' => __DIR__ . '/..' . '/symfony/console/Application.php',
         'Symfony\\Component\\Console\\Command\\Command' => __DIR__ . '/..' . '/symfony/console/Command/Command.php',
         'Symfony\\Component\\Console\\Command\\HelpCommand' => __DIR__ . '/..' . '/symfony/console/Command/HelpCommand.php',
