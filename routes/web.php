@@ -18,4 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/socios', 'SociosController@show_socios');
+Route::name('socios_path')->get('/socios', 'SociosController@show_socios');
+Route::name('delete_socio_path')->delete('/socios/{socio}', 'SociosController@delete_socio');
+Route::name('edit_socio_path')->get('/socios/{socio}/edit','SociosController@edit_socio');

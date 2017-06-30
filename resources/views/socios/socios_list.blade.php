@@ -6,11 +6,28 @@
 
 
 <div class="container">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="form-group">
 		<div class="panel panel-default">
                 <div class="panel-heading" style="text-align: center;"><h2> Socios </h2></div>
                 <div class="panel-body">
-					<div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer"><div class="row"><div class="col-sm-6"><div class="dataTables_length" id="datatable_length"><label>Show <select name="datatable_length" aria-controls="datatable" class="form-control input-sm"><option value="10">10</option><option value="25">25</option></select> entries</label></div></div><div class="col-sm-6"><div id="datatable_filter" class="dataTables_filter"><label> Search: <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable"></label></div></div></div>
+					<div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+					<div class="row">
+
+					<div class="dataTables_length" id="datatable_length">
+					<label>Mostrar <select name="datatable_length" aria-controls="datatable" class="form-control input-sm">
+					<option value="10">10</option>
+					<option value="25">25</option>
+					</select> socios
+					</label>
+					</div>
+
+					<div class="pull-right">
+					<div id="datatable_filter" class="dataTables_filter">
+					<label> Buscar: <input type="search" class="form-control input-sm" placeholder="" aria-controls="datatable">
+					</label>
+					</div>
+					</div>
+					</div>
 
           <div class="row"><div class="col-sm-12"><table id="datatable" class="table table-striped table-bordered dataTable no-footer" role="grid">
                       <thead>
@@ -24,6 +41,7 @@
 												<td class="col-sm-4"><b> Nombre/s </b></td>
 												<td><b> Telefono </b></td>
 												<td class="col-sm-2"><b> Tipo Socio </b></td>
+
                       </hr>
 
                         @foreach($socios as $socio)
@@ -35,10 +53,20 @@
                             <td>	@if($socio->protector)
 																		<b> Protector </b>
 																	@else
-																		{{$socio->deporte->deporte}}
+																		<b> {{$socio->deporte->deporte}} </b>
 																	@endif
+
 														</td>
-                          </tr>
+														<td><a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-info"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a> </td>
+
+														<form action="{{ route('delete_socio_path', ['socio' => $socio->id] ) }}" method="POST">
+															{{ csrf_field() }}
+															{{ method_field('DELETE') }}
+															<td><button class="btn btn-danger" aria-hidden="true" type="submit"><i class="fa fa-times-circle fa-2x" aria-hidden="true" type="submit"></i></button></td>
+														</form>
+                      	</tr>
+
+
                         @endforeach
 
                         </tr></tbody>
