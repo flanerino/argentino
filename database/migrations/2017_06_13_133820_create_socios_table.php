@@ -28,7 +28,6 @@ class CreateSociosTable extends Migration
       			$table->integer('estado_civil');
       			$table->boolean('protector');
       			$table->integer('deporte_id');
-      			$table->integer('tipo_socios_id');
             $table->timestamps();
         });
     }

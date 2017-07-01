@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/socios', 'SociosController@show_socios');
 
 // Rutas de la parte GASTOS
 Route::prefix('gastos')->group(function(){
@@ -29,3 +28,15 @@ Route::prefix('gastos')->group(function(){
   Route::put('/edit-gasto/{gasto}', 'GastosController@updateGasto')->name('update.gasto');
   Route::delete('/lista/{gasto}', 'GastosController@deleteGasto')->name('delete.gasto');
 });
+
+
+Route::name('delete_socio_path')->delete('/socios/{socio}', 'SociosController@delete_socio');
+
+Route::name('edit_socio_path')->get('/socios/{socio}/edit','SociosController@edit_socio');
+Route::name('update_socio_path')->put('/socios/{socio}','SociosController@update_socio');
+
+Route::name('create_socio_path')->get('/socios/create', 'SociosController@create_socio');
+Route::name('store_socio_path')->post('/socios', 'SociosController@store_socio');
+
+Route::name('socio_path')->get('/socios/{socio}', 'SociosController@show_socio');
+Route::name('socios_path')->get('/socios', 'SociosController@show_socios');

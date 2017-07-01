@@ -24,7 +24,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '1',
-          'tipo_socios_id' => '1'
       ]);
 
       DB::table('socios')->insert([
@@ -40,7 +39,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '2',
           'protector' => '0',
           'deporte_id' => '1',
-          'tipo_socios_id' => '1'
       ]);
 
       DB::table('socios')->insert([
@@ -56,7 +54,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '0',
           'deporte_id' => '1',
-          'tipo_socios_id' => '1'
       ]);
 
       DB::table('socios')->insert([
@@ -72,7 +69,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -88,7 +84,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '2',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -104,7 +99,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -120,7 +114,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -136,7 +129,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -152,7 +144,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
 
       DB::table('socios')->insert([
@@ -168,7 +159,6 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '1',
           'protector' => '1',
           'deporte_id' => '2',
-          'tipo_socios_id' => '2'
       ]);
     }
 }
