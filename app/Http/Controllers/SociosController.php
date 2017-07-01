@@ -55,9 +55,19 @@ class SociosController extends Controller
 	}
 
   public function update_socio(Socio $socio, UpdateSocioRequest $request){
+
+    if(is_null($request->get('protector'))){
+      $socio->protector = 0;
+    }else{
+      $socio->protector = $request->get('protector');
+    }
+
     $socio->update(
-      $request->only('nombre','apellido','nacionalidad','fecha_nac','email','dni','telefono','domicilio','domicilio_cobro','estado_civil','protector','deporte_id','tipo_socios_id')
+      $request->only('nombre','apellido','nacionalidad','fecha_nac','email','dni','telefono','domicilio','domicilio_cobro','estado_civil','deporte_id','tipo_socios_id')
     );
+
+
+
 
     session()->flash('message','Socio Editado');
 
@@ -83,7 +93,11 @@ class SociosController extends Controller
     $socio->domicilio = $request->get('domicilio');
     $socio->domicilio_cobro = $request->get('domicilio_cobro');
     $socio->estado_civil = $request->get('estado_civil');
-    $socio->protector = $request->get('protector');
+    if(is_null($request->get('protector'))){
+      $socio->protector = 0;
+    }else{
+      $socio->protector = $request->get('protector');
+    }
     $socio->deporte_id = $request->get('deporte_id');
     $socio->save();
 

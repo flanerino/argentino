@@ -28,4 +28,5 @@ class Socio extends Model
     return $this->belongsTo(Deporte::class);
 
   }
+
 }

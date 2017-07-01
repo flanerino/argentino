@@ -54,10 +54,10 @@
                          </div>
                        </div>
                        <div class="form-group">
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Nacimiento  <span class="required">*</span></label>
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Nacimiento<span class="required">*</span></label>
                          <div class="col-md-4 col-sm-4 col-xs-12">
                            <div id="fecha_nac" class="btn-group" data-toggle="buttons">
-                             <input id="fecha_nac" required="required" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" value="{{old('fecha_nac')}}">
+                             <input id="fecha_nac" placeholder="AAAA-MM-DD" required="required" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" value="{{old('fecha_nac')}}">
                            </div>
                          </div>
                        </div>
@@ -70,7 +70,7 @@
                        </div>
 
  					  <div class="form-group">
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI</span>
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI<span class="required">*</span>
                          </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
                            <input id="dni" name="dni" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{old('dni')}}">
@@ -86,7 +86,7 @@
                        </div>
 
  					  <div class="form-group">
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio</span>
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio<span class="required">*</span>
                          </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
                            <input id="domicilio" name="domicilio" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{ old('domicilio')}}">
@@ -94,7 +94,7 @@
                        </div>
 
  					  <div class="form-group">
-                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro</span>
+                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro<span class="required">*</span>
                          </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
                            <input id="domicilio_cobro" name="domicilio_cobro" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{old('domicilio_cobro')}}">
@@ -113,8 +113,7 @@
                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Protector <span class="required">*</span>
                          </label>
                          <div class="col-md-6 col-sm-6 col-xs-12">
-                           <!input name="protector" type="checkbox" value="1">
-                           <input id="protector" name="protector" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{ old('protector')}}">
+                           <input name="protector" type="checkbox" value="1">
                          </div>
                        </div>
 
