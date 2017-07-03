@@ -8,7 +8,6 @@
     <div class="x_title">
       <h2>Ingresar Gasto</h2>
       <div class="clearfix"></div>
-
       @include('gastos.errors')
     </div>
     <div class="x_content" style="display: block;">
