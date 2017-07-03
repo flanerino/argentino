@@ -39,6 +39,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => '2',
           'protector' => '0',
           'deporte_id' => '1',
+
       ]);
 
       DB::table('socios')->insert([

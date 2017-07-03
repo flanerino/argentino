@@ -16,7 +16,7 @@
   <div class="x_content" style="display: block;">
 
     <div class="row">
-      <div style="overflow-x: scroll;">
+      <div>
 
         <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
           <thead>

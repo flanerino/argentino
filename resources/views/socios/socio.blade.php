@@ -6,7 +6,8 @@
 <div class="container">
 	<div class="form-group">
 		<div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center;"><h2> Socio {{$socio->id}} </h2></div>
+                <div class="panel-heading" style="text-align: center;"><h2> {{$socio->nombre}} {{$socio->apellido}} </h2></div>
+								@include('socios.msjs')
                 <div class="panel-body">
 					<div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
 					<div class="row">

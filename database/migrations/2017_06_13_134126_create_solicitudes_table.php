@@ -15,19 +15,19 @@ class CreateSolicitudesTable extends Migration
     {
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('nombre');
-			$table->string('apellido');
-			$table->string('nacionalidad');
-			$table->date('fecha_nac');
-			$table->string('email');
-			$table->integer('dni');
-			$table->integer('telefono');
-			$table->string('domicilio');
-			$table->string('domicilio_cobro');
-			$table->integer('estado_civil');
-			$table->boolean('protector');
-			$table->integer('deporte_id');
-			$table->integer('tipo_socios_id');
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->string('nacionalidad');
+            $table->date('fecha_nac');
+            $table->string('email');
+            $table->integer('dni');
+            $table->integer('telefono');
+            $table->string('domicilio');
+            $table->string('domicilio_cobro');
+            $table->integer('estado_civil');
+            $table->boolean('protector');
+            $table->integer('deporte_id');
+            $table->integer('tipo_socios_id');
             $table->timestamps();
         });
     }
