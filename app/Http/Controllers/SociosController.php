@@ -27,7 +27,7 @@ class SociosController extends Controller
      */
     public function show_socios()
     {
-		$socios = Socio::with('deporte')->orderBy('id', 'asc')->paginate(50);
+		$socios = Socio::with('deporte')->orderBy('id', 'asc')->paginate(25);
         return view('socios/socios_list')->with(['socios' => $socios]);
     }
 
@@ -43,7 +43,7 @@ class SociosController extends Controller
 
       $socio->delete();
 
-      session()->flash('message','Socio eliminado');
+      session()->flash('msj','Socio eliminado');
 
       return redirect()->route('socios_path');
 	}
@@ -69,7 +69,7 @@ class SociosController extends Controller
 
 
 
-    session()->flash('message','Socio Editado');
+    session()->flash('msj','Socio Editado');
 
     return redirect()->route('socio_path', ['socio' => $socio->id]);
   }
@@ -101,7 +101,7 @@ class SociosController extends Controller
     $socio->deporte_id = $request->get('deporte_id');
     $socio->save();
 
-    session()->flash('message', 'Socio Creado');
+    session()->flash('msj', 'Socio Creado');
 
     return redirect()->route('socios_path');
   }
