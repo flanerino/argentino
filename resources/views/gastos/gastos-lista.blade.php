@@ -8,15 +8,16 @@
 
 <div class="x_title">
   <h2>Listado de Gastos</h2>
+  <span class="pull-right"><a class="btn btn-success" href="{{ route('create.gasto') }}">Nuevo Gasto</a></span>
   <div class="clearfix"></div>
 
   @include('gastos.msjs')
 </div>
 
-  <div class="x_content" style="display: block;">
+  <div class="x_content" style="display: block; overflow-x: scroll;">
 
     <div class="row">
-      <div style="overflow-x: scroll;">
+      <div>
 
         <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action dataTable no-footer" role="grid" aria-describedby="datatable-checkbox_info">
           <thead>
@@ -61,9 +62,32 @@
               {{ csrf_field() }}
 							{{ method_field('DELETE') }}
 
-              <button type="submit" class="btn btn-danger" aria-hidden="true">
-                <i type="submit" class="fa fa-times-circle" aria-hidden="true"></i>
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
+                <i type="button" class="fa fa-times-circle" aria-hidden="true"></i>
               </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="exampleModalLabel">Advertencia!</h2>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <h4>Esta seguro que quiere eliminar este GASTO?</h4>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                      <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </form>
           </td>
           <!-- boton para editar entrada -->

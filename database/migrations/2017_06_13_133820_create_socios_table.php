@@ -18,14 +18,14 @@ class CreateSociosTable extends Migration
             $table->increments('id');
       			$table->string('nombre');
       			$table->string('apellido');
-      			$table->string('nacionalidad');
+      			$table->string('nacionalidad')->nullable();
       			$table->date('fecha_nac');
-      			$table->string('email');
+      			$table->string('email')->nullable();
       			$table->integer('dni');
-      			$table->integer('telefono');
+      			$table->integer('telefono')->nullable();
       			$table->string('domicilio');
       			$table->string('domicilio_cobro');
-      			$table->integer('estado_civil');
+      			$table->integer('estado_civil')->nullable();
       			$table->boolean('protector');
       			$table->integer('deporte_id');
             $table->timestamps();

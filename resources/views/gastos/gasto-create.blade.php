@@ -8,7 +8,6 @@
     <div class="x_title">
       <h2>Ingresar Gasto</h2>
       <div class="clearfix"></div>
-
       @include('gastos.errors')
     </div>
     <div class="x_content" style="display: block;">
@@ -50,7 +49,7 @@
             Fecha
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" type="text" name="fecha" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ $gasto->fecha or old('fecha') }}">
+            <input placeholder="Año/Mes/Dia" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha or old('fecha') }}">
           </div>
         </div>
 
@@ -68,7 +67,7 @@
             Fecha de Pago
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" name="fecha_pago" type="text" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ $gasto->fecha_pago or old('fecha_pago') }}">
+            <input placeholder="Año/Mes/Dia" name="fecha_pago" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha_pago or old('fecha_pago') }}">
           </div>
         </div>
 
@@ -77,7 +76,7 @@
             Fecha de Vencimiento
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" name="fecha_vencimiento" type="text" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ $gasto->fecha_vencimiento or old('fecha_vencimiento') }}">
+            <input placeholder="Año/Mes/Dia" name="fecha_vencimiento" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha_vencimiento or old('fecha_vencimiento') }}">
           </div>
         </div>
 
@@ -86,7 +85,7 @@
             Observacion
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input name="observacion" class="date-picker form-control col-md-7 col-xs-12" rows="8" cols="80" type="text" value="{{ $gasto->observacion or old('observacion') }}">
+            <textarea class="form-control col-md-7 col-xs-12" name="observacion" rows="8" cols="80" value="{{ $gasto->observacion or old('observacion') }}"></textarea>
           </div>
         </div>
 

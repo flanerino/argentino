@@ -9,7 +9,7 @@
 	  <ul class="nav navbar-nav navbar-right">
 		<li class="">
 		  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-			<img src="images/img.jpg" alt="">
+			<img src="images/sources/user128x128.png" alt="">
 			<span class=" fa fa-angle-down"></span>
 		  </a>
 		  <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -20,7 +20,15 @@
 			  </a>
 			</li>
 			<li><a href="javascript:;">Ayuda</a></li>
-			<li><a href=""><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+      <li>
+        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            Salir <i class="fa fa-sign-out pull-right"></i>
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            {{ csrf_field() }}
+        </form>
+      </li>
 		  </ul>
 		</li>
 
@@ -32,7 +40,7 @@
 		  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
 			<li>
 			  <a>
-				<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+				<span class="image"><img src="images/sources/user128x128.png" alt="Profile Image" /></span>
 				<span>
 				  <span>John Smith</span>
 				  <span class="time">3 mins ago</span>
@@ -44,7 +52,7 @@
 			</li>
 			<li>
 			  <a>
-				<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+				<span class="image"><img src="images/sources/user128x128.png" alt="Profile Image" /></span>
 				<span>
 				  <span>John Smith</span>
 				  <span class="time">3 mins ago</span>
@@ -56,7 +64,7 @@
 			</li>
 			<li>
 			  <a>
-				<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+				<span class="image"><img src="images/sources/user128x128.png" alt="Profile Image" /></span>
 				<span>
 				  <span>John Smith</span>
 				  <span class="time">3 mins ago</span>
@@ -68,7 +76,7 @@
 			</li>
 			<li>
 			  <a>
-				<span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+				<span class="image"><img src="images/sources/user128x128.png" alt="Profile Image" /></span>
 				<span>
 				  <span>John Smith</span>
 				  <span class="time">3 mins ago</span>

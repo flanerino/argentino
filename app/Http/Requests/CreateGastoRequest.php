@@ -14,14 +14,8 @@ class CreateGastoRequest extends FormRequest
     public function rules()
     {
         return [
-            'num_factura' => 'required',
-            'proveedor' => 'required',
             'concepto' => 'required',
-            'fecha' => 'required|date',
             'monto' => 'required',
-            'fecha_pago' => 'required|date',
-            'fecha_vencimiento' => 'required|date',
-            'observacion' => 'required',
         ];
     }
 }

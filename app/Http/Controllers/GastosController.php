@@ -42,7 +42,7 @@ class GastosController extends Controller
 
   // Metodo para mostar las lista de los gastos ingresados
   public function showListaGastos(){
-    $gastos = Gasto::orderBy('id', 'desc')->get();
+    $gastos = Gasto::orderBy('id', 'desc')->paginate(10);
 
     return view('gastos.gastos-lista')->with(['gastos' => $gastos]);
   }
