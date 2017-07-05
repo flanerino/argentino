@@ -5,12 +5,13 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="">
+        <div class="col-md-12">
             <div class="panel panel-default">
+
                 <div class="panel-heading">Panel</div>
 
                 <div class="panel-body">
-                    
+
                     <div class="row tile_count">
                         <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                           <span class="count_top"><i class="fa fa-user"></i> Socios</span>
@@ -82,7 +83,7 @@
                             <div class="clearfix"></div>
                           </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>
