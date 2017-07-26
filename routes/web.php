@@ -19,7 +19,6 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
-
 // Rutas de la parte GASTOS
 Route::prefix('gastos')->group(function(){
   Route::get('/create-gasto', 'GastosController@createGasto')->name('create.gasto');
@@ -28,6 +27,16 @@ Route::prefix('gastos')->group(function(){
   Route::get('/edit-gasto/{gasto}', 'GastosController@editGasto')->name('edit.gasto');
   Route::put('/edit-gasto/{gasto}', 'GastosController@updateGasto')->name('update.gasto');
   Route::delete('/lista/{gasto}', 'GastosController@deleteGasto')->name('delete.gasto');
+});
+
+// Rutas de la parte DEPORTES
+Route::prefix('deportes')->group(function(){
+  Route::get('/lista', 'DeportesController@showListaDeportes')->name('deportes.lista');
+  Route::get('/create-deporte', 'DeportesController@createDeporte')->name('create.deporte');
+  Route::post('/create-deporte', 'DeportesController@storeDeporte')->name('store.deporte');
+  Route::get('/edit-deporte/{deporte}', 'DeportesController@editDeporte')->name('edit.deporte');
+  Route::put('/edit-deporte/{deporte}', 'DeportesController@updateDeporte')->name('update.deporte');
+  Route::delete('/lista/{deporte}', 'DeportesController@deleteDeporte')->name('delete.deporte');
 });
 
 // Rutas de la parte SOCIOS

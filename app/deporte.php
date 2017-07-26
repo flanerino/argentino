@@ -8,10 +8,9 @@ class Deporte extends Model
 {
     protected $table = 'deportes';
 
-    protected $fillable=[
-	'nombre_deporte',
-	'cuota',
-	'id_padre'];
-
-
+    protected $fillable = [
+     'deporte',
+     'cuota',
+     'id_padre'
+   ];
 }

@@ -19,10 +19,16 @@
           <li><a href="{{ route('gastos.lista') }}">Listado Gastos</a></li>
         </ul>
       </li>
+      <li><a> Deportes <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{{ route('create.deporte') }}">Ingresar Gasto</a></li>
+          <li><a href="{{ route('deportes.lista') }}">Listado Deportes</a></li>
+        </ul>
+      </li>
     </ul>
   </div>
   <div class="menu_section">
-    <h3>Live On</h3>
+
   </div>
 
 </div>

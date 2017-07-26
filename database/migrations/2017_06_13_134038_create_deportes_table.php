@@ -14,10 +14,11 @@ class CreateDeportesTable extends Migration
     public function up()
     {
         Schema::create('deportes', function (Blueprint $table) {
-            $table->increments('id');
-			$table->string('deporte');
-			$table->integer('cuota');
-			$table->integer('id_padre');
+          $table->increments('id');
+		      $table->string('deporte');
+		      $table->integer('cuota');
+		      $table->integer('id_padre');
+          $table->timestamps();
         });
     }
 
