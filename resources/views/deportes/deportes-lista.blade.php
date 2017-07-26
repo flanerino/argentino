@@ -58,12 +58,12 @@
   							{{ method_field('DELETE') }}
 
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteDeporte">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteDeporte{{$deporte->id}}">
                   <i type="button" class="fa fa-times-circle" aria-hidden="true"></i>
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="modalDeleteDeporte" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="modalDeleteDeporte{{$deporte->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
