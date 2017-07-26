@@ -7,6 +7,7 @@ use Argentino\deporte;
 use Argentino\socio;
 use Argentino\Http\Requests\CreateSocioRequest;
 use Argentino\Http\Requests\UpdateSocioRequest;
+use Illuminate\Support\Facades\Input;
 
 class SociosController extends Controller
 {
@@ -99,6 +100,16 @@ class SociosController extends Controller
       $socio->protector = $request->get('protector');
     }
     $socio->deporte_id = $request->get('deporte_id');
+
+	$socio->imagen = Input::file('imagen');
+	if (Input::hasFile('imagen'))
+{
+	var_dump($socio);
+	$destinationPath = public_path('/images');
+    Input::file('imagen')->move($destinationPath);
+	
+}
+	
     $socio->save();
 
     session()->flash('msj', 'Socio Creado');
