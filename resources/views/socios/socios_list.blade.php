@@ -9,7 +9,7 @@
 
   <div class="x_title">
     <h2> Socios </h2>
-    <div class=pull-right> <a href="{{ route('create_socio_path') }}" class="btn btn-success"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></a></div>
+    <div class=pull-right> <a href="{{ route('create_socio_path') }}" class="btn btn-success">Nuevo Socio</a></div>
     <div class="clearfix"></div>
 
 
@@ -38,7 +38,7 @@
                   @foreach($socios as $socio)
                   <tr role="row" class="odd">
                       <td class="sorting_1">
-                          <a  href="{{ route('socio_path', ['socio' => $socio->id] ) }}">	{{$socio->id}} </a>
+                          <a> {{$socio->id}} </a>
                       </td>
                       <td>{{$socio->apellido}}</td>
                       <td>{{$socio->nombre}}</td>
@@ -50,11 +50,11 @@
                               <b> {{$socio->deporte->deporte}} </b>
                           @endif
                       </td>
-                      <td><a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-info"><i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i></a></td>
+                      <td><a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-info"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a></td>
                       <form action="{{ route('delete_socio_path', ['socio' => $socio->id] ) }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
-                          <td><button class="btn btn-danger" aria-hidden="true" type="submit"><i class="fa fa-times-circle fa-2x" aria-hidden="true" type="submit"></i></button></td>
+                          <td><button class="btn btn-danger" aria-hidden="true" type="submit"><i class="fa fa-times-circle fa-1x" aria-hidden="true" type="submit"></i></button></td>
                       </form>
               </tr>
             @endforeach

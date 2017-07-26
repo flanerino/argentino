@@ -24,14 +24,15 @@ class CreateSocioRequest extends FormRequest
     public function rules()
     {
         return [
-          /*  'nombre'=> 'required',
+            'nombre'=> 'required',
             'apellido' => 'required',
             'fecha_nac' => 'required',
             'dni' => 'required',
             'domicilio' => 'required',
             'domicilio_cobro' => 'required',
             'protector' => 'required',
-            'deporte_id' => 'required' */
+            'deporte_id' => 'required',
+			'imagen' => 'required'
         ];
     }
 }
