@@ -32,7 +32,6 @@ class CreateSocioRequest extends FormRequest
             'domicilio_cobro' => 'required',
             'protector' => 'required',
             'deporte_id' => 'required',
-			'imagen' => 'required'
         ];
     }
 }

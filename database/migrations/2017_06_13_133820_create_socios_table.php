@@ -28,7 +28,7 @@ class CreateSociosTable extends Migration
       			$table->integer('estado_civil')->nullable();
       			$table->boolean('protector');
       			$table->integer('deporte_id');
-				$table->string('imagen');
+				$table->string('imagen')->nullable();
             $table->timestamps();
         });
     }
