@@ -5,7 +5,7 @@
 @section ('content')
  <h2> Agregar Socio </h2>
 
- <form action="{{ route('store_socio_path') }}" files=true class="form-horizontal form-label-left" method="POST">
+ <form action="{{ route('store_socio_path') }}" files=true class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="x_panel">
         <div class="x_title">

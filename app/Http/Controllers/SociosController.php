@@ -100,16 +100,17 @@ class SociosController extends Controller
       $socio->protector = $request->get('protector');
     }
     $socio->deporte_id = $request->get('deporte_id');
-
-	$socio->imagen = Input::file('imagen');
-	if (Input::hasFile('imagen'))
-{
+    var_dump(1111111);
+    var_dump($_FILES);
+    if (Input::hasFile('imagen'))
+    {        
+        var_dump(22222);
 	var_dump($socio);
+        $socio->imagen = Input::file('imagen');        
 	$destinationPath = public_path('/images');
-    Input::file('imagen')->move($destinationPath);
-	
-}
-	
+        Input::file('imagen')->move($destinationPath);	
+    }
+	exit;
     $socio->save();
 
     session()->flash('msj', 'Socio Creado');
