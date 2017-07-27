@@ -18,7 +18,9 @@ class DeportesController extends Controller
     public function showListaDeportes(){
       $deportes = deporte::orderBy('id', 'desc')->paginate(10);
 
-      return view('deportes.deportes-lista')->with(['deportes' => $deportes]);
+      return view('deportes.deportes-lista')->with([
+        'deportes' => $deportes
+      ]);
     }
 
     public function createDeporte(){
@@ -51,11 +53,11 @@ class DeportesController extends Controller
     }
 
     public function deleteDeporte(deporte $deporte){
-      /*$deporte->delete();
+
+      $deporte->delete();
 
       session()->flash('msj', 'Deporte Eliminado');
 
-      return redirect()->route('deportes.lista');*/
-      return $deporte;
+      return redirect()->route('deportes.lista');
     }
 }

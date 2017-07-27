@@ -6,7 +6,7 @@
 
   <div class="x_panel">
     <div class="x_title">
-      <h2>Editar Deporte</h2>
+      <h2><i class="fa fa-futbol-o" aria-hidden="true"></i>Editar Deporte</h2>
       <div class="clearfix"></div>
       @include('gastos.errors')
     </div>
@@ -15,8 +15,8 @@
 
       <form class="form-horizontal form-label-left" action="{{ route('update.deporte', ['deporte' => $deporte->id]) }}" method="POST">
 
-        {{ method_field('PUT') }}
         {{ csrf_field() }}
+        {{ method_field('PUT') }}
 
         <div class="form-group">
           <label class="control-label col-md-3 col-sm-3 col-xs-12" for="deporte">

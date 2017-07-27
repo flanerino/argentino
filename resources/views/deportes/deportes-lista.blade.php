@@ -7,7 +7,7 @@
   <div class="x_panel">
 
   <div class="x_title">
-    <h2>Listado de Deportes</h2>
+    <h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Listado de Deportes</h2>
     <span class="pull-right">
       <a class="btn btn-success" href="{{ route('create.deporte') }}">
         Nuevo Deporte

@@ -6,7 +6,7 @@
 
   <div class="x_panel">
     <div class="x_title">
-      <h2>Modificar Gasto</h2>
+      <h2><i class="fa fa-usd" aria-hidden="true"></i> Modificar Gasto</h2>
       <div class="clearfix"></div>
 
       @include('gastos.errors')

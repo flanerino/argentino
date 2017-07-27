@@ -6,7 +6,7 @@
 
   <div class="x_panel">
     <div class="x_title">
-      <h2>Ingresar Deporte</h2>
+      <h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Ingresar Deporte</h2>
       <div class="clearfix"></div>
       @include('gastos.errors')
     </div>
