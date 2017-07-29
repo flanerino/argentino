@@ -21,7 +21,10 @@
                             <td class="sorting_1"><b> Nº de Socio </b></td>
                             <td class="sorting_1">	{{$socio->id}}	</td>
                         </tr>
-
+												<tr role="row" class="odd">
+													<td class="sorting_1"><b> Imagen </b></td>
+													<td><img src="/images/socios/{{$socio->imagen}}"></td>
+												</tr>
                         <tr role="row" class="odd">
                             <td class="sorting_1"><b> Apellido/s </b></td>
                             <td class="sorting_1">	{{$socio->apellido}}	</td>

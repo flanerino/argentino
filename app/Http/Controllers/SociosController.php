@@ -26,12 +26,14 @@ class SociosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     //Mostrar lista de socios
     public function show_socios()
     {
 		$socios = Socio::with('deporte')->orderBy('id', 'asc')->paginate(25);
         return view('socios/socios_list')->with(['socios' => $socios]);
     }
-
+    //Mostrar Socio individual
     public function show_socio(Socio $socio)
     {
 
@@ -52,9 +54,12 @@ class SociosController extends Controller
 // Editado de Socios
 
 	public function edit_socio(socio $socio){
-		return view ('socios.socio_edit')->with(['socio' => $socio]);
+    $deportes = Deporte::all();
+
+		return view ('socios.socio_edit')->with(['socio' => $socio,  'deportes' => $deportes]);
 	}
 
+  //Actualización de Socio en la DB
   public function update_socio(Socio $socio, UpdateSocioRequest $request){
 
     if(is_null($request->get('protector'))){
@@ -79,9 +84,11 @@ class SociosController extends Controller
 
   public function create_socio(){
     $socio = new Socio;
-    return view ('socios.socio_create')->with(['socio' => $socio]);
+    $deportes = Deporte::all();
+    return view ('socios.socio_create')->with(['socio' => $socio, 'deportes' => $deportes]);
   }
 
+  //Guardado de Socio en la DB
   public function store_socio(CreateSocioRequest $request){
     $socio = new Socio;
     $socio->nombre = $request->get('nombre');
@@ -100,17 +107,16 @@ class SociosController extends Controller
       $socio->protector = $request->get('protector');
     }
     $socio->deporte_id = $request->get('deporte_id');
-    var_dump(1111111);
-    var_dump($_FILES);
     if (Input::hasFile('imagen'))
-    {        
-        var_dump(22222);
-	var_dump($socio);
-        $socio->imagen = Input::file('imagen');        
-	$destinationPath = public_path('/images');
-        Input::file('imagen')->move($destinationPath);	
+    {
+      $file = Input::file('imagen');
+      $filename = $request->get('apellido').'.jpg';
+
+      Input::file('imagen')->move(public_path('images/socios'), $filename);
+      $socio->imagen = $filename;
+
     }
-	exit;
+
     $socio->save();
 
     session()->flash('msj', 'Socio Creado');

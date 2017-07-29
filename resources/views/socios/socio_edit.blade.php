@@ -10,7 +10,7 @@
     {{ csrf_field() }}
     <div class="x_panel">
       <div class="x_title">
-        <h2>Socios <small>editar un socio</small></h2>
+         <h2><i class="fa fa-user" aria-hidden="true"></i> Socios <small>editar un socio</small></h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
           </li>
@@ -30,6 +30,7 @@
       </div>
 
       <div class="x_content">
+        @include('socios.errors')
         <br>
         <form id="demo-form2" data-parsley-validate="" class="form-horizontal form-label-left" novalidate="">
 
@@ -56,10 +57,10 @@
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Nacimiento  <span class="required">*</span></label>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Fecha de Nacimiento </label>
             <div class="col-md-4 col-sm-4 col-xs-12">
               <div id="fecha_nac" class="btn-group" data-toggle="buttons">
-                <input id="fecha_nac" required="required" placeholder="AAAA/MM/DD" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" data-inputmask="'mask': '9999/99/99'" value="{{$socio->fecha_nac}}">
+                <input id="fecha_nac" placeholder="AAAA/MM/DD" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" data-inputmask="'mask': '9999/99/99'" value="{{$socio->fecha_nac}}">
               </div>
             </div>
           </div>
@@ -72,10 +73,10 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="dni" name="dni" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->dni}}">
+              <input id="dni" name="dni" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{$socio->dni}}">
             </div>
           </div>
 
@@ -88,18 +89,18 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="domicilio" name="domicilio" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->domicilio}}">
+              <input id="domicilio" name="domicilio" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{$socio->domicilio}}">
             </div>
           </div>
 
           <div class="form-group">
-            <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro<span class="required">*</span>
+            <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="domicilio_cobro" name="domicilio_cobro" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->domicilio_cobro}}">
+              <input id="domicilio_cobro" name="domicilio_cobro" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{$socio->domicilio_cobro}}">
             </div>
           </div>
 
@@ -115,7 +116,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Protector <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input name="protector" type="checkbox" checked="checked" value="1">
+              <input name="protector" type="checkbox" value="1">
             </div>
           </div>
 
@@ -123,9 +124,21 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Deporte <span class="required">*</span>
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="deporte" name="deporte_id" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->deporte_id}}">
+              <select name="deporte_id">
+               <option value=""><li><li> </option>
+               @foreach($deportes as $deporte)
+                 <option value="{{$deporte->id}}"><li>{{$deporte->deporte}}</li></option>
+               @endforeach
+             </select>
             </div>
           </div>
+
+          <div class="form-group">
+    				<label class="control-label col-md-3 col-sm-3 col-xs-12">Imagen
+                    </label>
+    				<input class="field" id="imagen" name="imagen" type="file" accept="image/png, .jpeg, .jpg, image/gif">
+                </div>
+    			<div class="form-group">
 
           <div class="ln_solid"></div>
           <div class="form-group">

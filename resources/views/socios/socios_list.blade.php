@@ -8,7 +8,7 @@
 <div class="x_panel">
 
   <div class="x_title">
-    <h2> Socios </h2>
+    <h2> <i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
     <div class=pull-right> <a href="{{ route('create_socio_path') }}" class="btn btn-success">Nuevo Socio</a></div>
     <div class="clearfix"></div>
 
@@ -50,7 +50,7 @@
                               <b> {{$socio->deporte->deporte}} </b>
                           @endif
                       </td>
-                      <td><a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-info"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a></td>
+                      <td><a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a></td>
                       <form action="{{ route('delete_socio_path', ['socio' => $socio->id] ) }}" method="POST">
                           {{ csrf_field() }}
                           {{ method_field('DELETE') }}
