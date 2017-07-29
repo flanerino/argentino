@@ -1,16 +1,21 @@
 @extends('layouts.app')
 
-@php ($title = 'Mi Panel')
+@php ($title = 'Ingresar Gasto')
 
 @section('content')
 
+  <h2>Ingresar Gasto</h2>
+
   <div class="x_panel">
     <div class="x_title">
-      <h2><i class="fa fa-usd" aria-hidden="true"></i> Ingresar Gasto</h2>
+      <h2>
+        <i class="fa fa-usd" aria-hidden="true"></i>Gastos
+        <small>ingresa un gasto</small>
+      </h2>
       <div class="clearfix"></div>
-      @include('gastos.errors')
     </div>
     <div class="x_content" style="display: block;">
+      @include('gastos.errors')
       <br>
 
       <form data-parsley-validate="" class="form-horizontal form-label-left" novalidate="" action="{{ route('store.gasto') }}" method="POST">
@@ -22,7 +27,7 @@
             N° de Factura
           </label>
           <div class="col-md-2 col-sm-2 col-xs-8">
-            <input type="text" name="num_factura" class="form-control col-md-7 col-xs-12" value="{{ $gasto->num_factura or old('num_factura') }}">
+            <input id="num_factura" type="text" name="num_factura" class="form-control col-md-7 col-xs-12" value="{{ old('num_factura') }}">
           </div>
         </div>
 
@@ -31,16 +36,16 @@
             Proveedor
           </label>
           <div class="col-md-4 col-sm-4 col-xs-10">
-            <input type="text" name="proveedor" class="form-control col-md-7 col-xs-12" value="{{ $gasto->proveedor or old('proveedor') }}">
+            <input id="proveedor" type="text" name="proveedor" class="form-control col-md-7 col-xs-12" value="{{ old('proveedor') }}">
           </div>
         </div>
 
         <div class="form-group">
           <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">
-            Concepto
+            Concepto <span class="required">*</span>
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <input name="concepto" class="form-control col-md-7 col-xs-12" type="text" value="{{ $gasto->concepto or old('concepto') }}">
+            <input id="concepto" required="required" name="concepto" class="form-control col-md-7 col-xs-12" type="text" value="{{ old('concepto') }}">
           </div>
         </div>
 
@@ -49,16 +54,16 @@
             Fecha
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha or old('fecha') }}">
+            <input id="fecha" placeholder="Año/Mes/Dia" type="text" name="fecha" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ old('fecha') }}">
           </div>
         </div>
 
         <div class="form-group">
           <label class="control-label col-md-3 col-sm-3 col-xs-12">
-            Monto
+            Monto <span class="required">*</span>
           </label>
           <div class="col-md-2 col-sm-2 col-xs-8">
-            <input name="monto" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{ $gasto->monto or old('monto') }}">
+            <input id="monto" required="required" name="monto" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{ old('monto') }}">
           </div>
         </div>
 
@@ -67,7 +72,7 @@
             Fecha de Pago
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" name="fecha_pago" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha_pago or old('fecha_pago') }}">
+            <input id="fecha_pago" placeholder="Año/Mes/Dia" name="fecha_pago" type="text" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ old('fecha_pago') }}">
           </div>
         </div>
 
@@ -76,7 +81,7 @@
             Fecha de Vencimiento
           </label>
           <div class="col-md-3 col-sm-3 col-xs-8">
-            <input placeholder="Año/Mes/Dia" name="fecha_vencimiento" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ $gasto->fecha_vencimiento or old('fecha_vencimiento') }}">
+            <input id="fecha_vencimiento" placeholder="Año/Mes/Dia" name="fecha_vencimiento" type="text" class="form-control" data-inputmask="'mask': '9999/99/99'" value="{{ old('fecha_vencimiento') }}">
           </div>
         </div>
 
@@ -85,7 +90,7 @@
             Observacion
           </label>
           <div class="col-md-6 col-sm-6 col-xs-12">
-            <textarea class="form-control col-md-7 col-xs-12" name="observacion" rows="8" cols="80" value="{{ $gasto->observacion or old('observacion') }}"></textarea>
+            <textarea id="observacion" class="form-control col-md-7 col-xs-12" name="observacion" rows="8" cols="80">{{ old('observacion') }}</textarea>
           </div>
         </div>
 
@@ -93,7 +98,8 @@
 
         <div class="form-group">
           <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-            <button type="submit" class="btn btn-success">Enviar</button>
+            <a type="button" href="{{ route('gastos.lista') }}" class="btn btn-primary">Cancelar</a>
+            <button type="submit" class="btn btn-success">Guardar</button>
           </div>
         </div>
 

@@ -1,12 +1,17 @@
 @extends('layouts.app')
 
-@php ($title = 'Mi Panel')
+@php ($title = 'Editar Gasto')
 
 @section('content')
 
+  <h2>Editar Gasto</h2>
+
   <div class="x_panel">
     <div class="x_title">
-      <h2><i class="fa fa-usd" aria-hidden="true"></i> Modificar Gasto</h2>
+      <h2>
+        <i class="fa fa-usd" aria-hidden="true"></i> Gastos
+        <small>editar un gasto</small>
+      </h2>
       <div class="clearfix"></div>
 
       @include('gastos.errors')
@@ -39,7 +44,7 @@
 
       <div class="form-group">
         <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">
-          Concepto
+          Concepto <span class="required">*</span>
         </label>
         <div class="col-md-6 col-sm-6 col-xs-12">
           <input name="concepto" class="form-control col-md-7 col-xs-12" type="text" value="{{ $gasto->concepto }}">
@@ -57,7 +62,7 @@
 
       <div class="form-group">
         <label class="control-label col-md-3 col-sm-3 col-xs-12">
-          Monto
+          Monto <span class="required">*</span>
         </label>
         <div class="col-md-2 col-sm-2 col-xs-8">
           <input name="monto" class="date-picker form-control col-md-7 col-xs-12" type="text" value="{{ $gasto->monto }}">
@@ -95,7 +100,8 @@
 
       <div class="form-group">
         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-          <button type="submit" class="btn btn-success">Enviar</button>
+          <a type="button" href="{{ route('gastos.lista') }}" class="btn btn-primary">Cancelar</a>
+          <button type="submit" class="btn btn-success">Guardar</button>
         </div>
       </div>
 

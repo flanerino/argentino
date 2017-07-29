@@ -1,21 +1,19 @@
 @extends('layouts.app')
 
-@php ($title = 'Mi Panel')
+@php ($title = 'Gastos')
 
 @section('content')
 
 <div class="x_panel">
 
 <div class="x_title">
-  <h2><i class="fa fa-usd" aria-hidden="true"></i> Listado de Gastos</h2>
+  <h2><i class="fa fa-usd" aria-hidden="true"></i> Gastos</h2>
   <span class="pull-right"><a class="btn btn-success" href="{{ route('create.gasto') }}">Nuevo Gasto</a></span>
   <div class="clearfix"></div>
-
-  @include('gastos.msjs')
 </div>
 
   <div class="x_content" style="display: block; ">
-
+    @include('gastos.msjs')
     <div class="row">
       <div>
 
@@ -66,6 +64,13 @@
           <td class="text-center">{{ $gasto->fecha_pago }}</td>
           <td class="text-center">{{ $gasto->fecha_vencimiento }}</td>
 
+          <!-- boton para editar entrada -->
+          <td class="text-center">
+            <a class="btn btn-primary" href="{{ route('edit.gasto', ['gasto' => $gasto->id]) }}">
+              <i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i>
+            </a>
+          </td>
+
           <!-- boton para eliminar una entrada -->
           <td class="text-center">
             <form action="{{ route('delete.gasto', ['gasto' => $gasto->id]) }}" method="POST">
@@ -97,12 +102,6 @@
               </div>
 
             </form>
-          </td>
-          <!-- boton para editar entrada -->
-          <td class="text-center">
-            <a class="btn btn-primary" href="{{ route('edit.gasto', ['gasto' => $gasto->id]) }}">
-              <i class="fa fa-pencil" aria-hidden="true"></i>
-            </a>
           </td>
         </tr>
       @endforeach

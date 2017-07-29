@@ -2,8 +2,7 @@
 
   <div class="alert alert-danger">
     <ul>
-      <li>El campo CONCEPTO es requerido.</li>
-      <li>El campo MONTO es requerido.</li>
+      <li>Por favor rellene los campos requeridos (*).</li>
     </ul>
   </div>
 

@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@php ($title = 'Mi Panel')
+@php ($title = 'Deportes')
 
 @section('content')
 
   <div class="x_panel">
 
   <div class="x_title">
-    <h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Listado de Deportes</h2>
+    <h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Deportes</h2>
     <span class="pull-right">
       <a class="btn btn-success" href="{{ route('create.deporte') }}">
         Nuevo Deporte
@@ -15,12 +15,10 @@
     </span>
 
     <div class="clearfix"></div>
-
-    @include('deportes.msjs')
   </div>
 
     <div class="x_content" style="display: block; ">
-
+      @include('deportes.msjs')
       <div class="row">
         <div>
 
@@ -50,6 +48,13 @@
 
             <td style="text-align: center;">{{ $deporte->deporte }}</td>
             <td style="text-align: center;">${{ $deporte->cuota }}</td>
+
+            <!-- boton para editar entrada -->
+            <td class="text-center">
+              <a class="btn btn-primary" href="{{ route('edit.deporte', ['deporte' => $deporte->id]) }}">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+              </a>
+            </td>
 
             <!-- boton para eliminar una entrada -->
             <td class="text-center">
@@ -82,13 +87,6 @@
                 </div>
 
               </form>
-            </td>
-
-            <!-- boton para editar entrada -->
-            <td class="text-center">
-              <a class="btn btn-primary" href="{{ route('edit.deporte', ['deporte' => $deporte->id]) }}">
-                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-              </a>
             </td>
 
           </tr>
