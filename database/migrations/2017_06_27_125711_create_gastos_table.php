@@ -19,7 +19,7 @@ class CreateGastosTable extends Migration
             $table->string('proveedor');
             $table->string('concepto');
             $table->date('fecha');
-            $table->integer('monto');
+            $table->double('monto');
             $table->date('fecha_pago');
             $table->date('fecha_vencimiento');
             $table->string('observacion');

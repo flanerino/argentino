@@ -15,22 +15,22 @@
                     <div class="row tile_count">
                         <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                           <span class="count_top"><i class="fa fa-user"></i> Socios</span>
-                          <div class="count">2500</div>
+                          <div class="count">{{$socios}}</div>
                           <span class="count_bottom"><i class="green">4 </i> Este mes</span>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                           <span class="count_top"><i class="fa fa-usd"></i> Ingresos</span>
-                          <div class="count">123.50</div>
+                          <div class="count">{{$ingresos}}</div>
                           <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> respecto al último mes</span>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                           <span class="count_top"><i class="fa fa-usd"></i> Gastos</span>
-                          <div class="count green">2,500</div>
+                          <div class="count green">{{$gastos}}</div>
                           <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>34% </i> resperto al último mes</span>
                         </div>
                         <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
                           <span class="count_top"><i class="fa fa-line-chart"></i> Balance</span>
-                          <div class="count">4,567</div>
+                          <div class="count">{{$balance}}</div>
                         </div>
                     </div>
 
@@ -41,7 +41,7 @@
 
                             <div class="row x_title">
                               <div class="col-md-6">
-                                <h3>Balance últimos 6 meses <small>Ingresos contra egresos</small></h3>
+                                  <h3>Balance últimos 6 meses <small style="color:red">a futuro</small></h3>
                               </div>
                               <div class="col-md-6">
                                 <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">

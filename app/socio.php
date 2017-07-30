@@ -3,7 +3,7 @@
 namespace Argentino;
 
 use Illuminate\Database\Eloquent\Model;
-use Argentino\Deporte;
+use Argentino\Libraries\DateHelper;
 
 class Socio extends Model
 {
@@ -12,7 +12,6 @@ class Socio extends Model
     protected $fillable=[
 	'nombre',
 	'apellido',
-	'nacionalidad',
 	'fecha_nac',
 	'email',
 	'dni',
@@ -23,10 +22,45 @@ class Socio extends Model
 	'protector',
 	'deporte_id'];
 
-  public function deporte(){
+    public function deporte()
+    {
+        return $this->belongsTo(Deporte::class);
+    }
+    
+    public function changeDateToDB($value) 
+    {
+        return \Carbon\Carbon::parse($value)->format('d/m/Y');
+    }    
+    
+    public function getFechaNacAttribute($value)
+    {
+        return DateHelper::formatToShow($value);
+    }
 
-    return $this->belongsTo(Deporte::class);
-
-  }
-
+    public function setFechaNacAttribute($value)
+    {
+        $this->attributes['fecha_nac'] = DateHelper::formatToDB($value);
+    }    
+    
+    public function scopeFilter($query, $protector,$deporte_id)
+    {
+        if ($protector)
+        {
+            if($protector=-1)
+                $protector=0;
+            
+            $query->where(function ($query) use ($protector)
+            {
+                $query->where('protector', '=', $protector);
+            });
+        }
+        if ($deporte_id)
+        {
+            $query->where(function ($query) use ($deporte_id)
+            {
+                $query->where('deporte_id', '=', $deporte_id);
+            });
+        }
+        
+    }    
 }

@@ -14,7 +14,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio',
           'apellido' => 'socio',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1980-6-1',
           'email' => 'socio@gmail.com',
           'dni' => '39085467',
@@ -29,7 +28,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio1',
           'apellido' => 'socio1',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1990-4-10',
           'email' => 'socio1@gmail.com',
           'dni' => '40805333',
@@ -45,7 +43,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio2',
           'apellido' => 'socio2',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '2000-10-20',
           'email' => 'socio2@gmail.com',
           'dni' => '41987345',
@@ -60,7 +57,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio3',
           'apellido' => 'socio3',
-          'nacionalidad' => 'boliviano',
           'fecha_nac' => '1997-3-13',
           'email' => 'socio3@gmail.com',
           'dni' => '40000467',
@@ -75,7 +71,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio4',
           'apellido' => 'socio4',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '2000-12-22',
           'email' => 'socio4@gmail.com',
           'dni' => '41222333',
@@ -90,7 +85,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio5',
           'apellido' => 'socio5',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1970-11-28',
           'email' => 'socio5@gmail.com',
           'dni' => '38145712',
@@ -105,7 +99,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio6',
           'apellido' => 'socio6',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1970-11-28',
           'email' => 'socio6@gmail.com',
           'dni' => '38245712',
@@ -120,7 +113,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio7',
           'apellido' => 'socio7',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1970-11-28',
           'email' => 'socio7@gmail.com',
           'dni' => '38245475',
@@ -135,7 +127,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio7',
           'apellido' => 'socio7',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1971-9-27',
           'email' => 'socio7@gmail.com',
           'dni' => '38245124',
@@ -150,7 +141,6 @@ class SociosTableSeeder extends Seeder
       DB::table('socios')->insert([
           'nombre' => 'socio8',
           'apellido' => 'socio8',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1972-4-12',
           'email' => 'socio8@gmail.com',
           'dni' => '38234712',

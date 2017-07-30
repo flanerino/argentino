@@ -17,7 +17,6 @@ class CreateSolicitudesTable extends Migration
             $table->increments('id');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('nacionalidad');
             $table->date('fecha_nac');
             $table->string('email');
             $table->integer('dni');

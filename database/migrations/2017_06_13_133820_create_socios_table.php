@@ -18,7 +18,6 @@ class CreateSociosTable extends Migration
             $table->increments('id');
       			$table->string('nombre');
       			$table->string('apellido');
-      			$table->string('nacionalidad')->nullable();
       			$table->date('fecha_nac')->nullable();
       			$table->string('email')->nullable();
       			$table->integer('dni')->nullable();
