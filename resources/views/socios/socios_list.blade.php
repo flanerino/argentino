@@ -35,14 +35,14 @@
                                             <option <?if($deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->deporte}}</li></option>
                                         @endforeach
                                     </select>
-                                </div>        
+                                </div>
                                 <button type="submit" class="btn btn-default">Filtrar</button>
                                 <a class="btn btn-danger" href="/socios"><i class="fa fa-times"></i></a>
                             </form>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
-            </div>            
+            </div>
             <div class="row">
                 <div class="col-sm-12">
                     <table id="tableSocio" class="table table-striped table-bordered tableDinamica">
@@ -59,7 +59,7 @@
                         @foreach($socios as $socio)
                             <tr role="row" class="odd">
                                 <td class="sorting_1">
-                                    <a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}"> {{$socio->id}} </a>
+                                    <a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}"> {{$socio->nro}} </a>
                                 </td>
                                 <td>{{$socio->apellido}}</td>
                                 <td>{{$socio->nombre}}</td>
@@ -90,7 +90,7 @@
                                                 </div>
                                                 <form action="{{ route('delete_socio_path', ['socio' => $socio->id] ) }}" method="POST">
                                                     {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}                                                    
+                                                    {{ method_field('DELETE') }}
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -141,7 +141,7 @@
     <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
     <script src="/js/tabladinamica.js"></script>
-    
+
     <script type="text/javascript">
         $(document).ready(function(){
             iniciarTabla();

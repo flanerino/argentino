@@ -32,13 +32,13 @@ class SociosController extends Controller
     {
         $protector=Input::get('protector');
         $deporte_id=Input::get('deporte_id');
-            
+
         $deportes = Deporte::all();
-        
+
         $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
         //$socios = Socio::with('deporte')->orderBy('id', 'asc')->get();
         return view('socios/socios_list')->with(
-                [   'socios' => $socios, 
+                [   'socios' => $socios,
                     'deportes' => $deportes,
                     'protector' => $protector,
                     'deporte_id' => $deporte_id
@@ -78,7 +78,9 @@ class SociosController extends Controller
         {
             $socio->protector = $request->get('protector');
         }
-        $socio->update($request->only('nombre',
+        $socio->update($request->only(
+                'nro',
+                'nombre',
                 'apellido',
                 'fecha_nac',
                 'email',
@@ -92,7 +94,7 @@ class SociosController extends Controller
 
         session()->flash('msj','Socio Editado');
 
-        return redirect()->route('socio_path', ['socio' => $socio->id]);
+        return redirect()->route('edit_socio_path', ['socio' => $socio->id]);
     }
 
     // Creado de Socios
@@ -105,9 +107,10 @@ class SociosController extends Controller
 
     //Guardado de Socio en la DB
     public function store_socio(CreateSocioRequest $request)
-    {        
+    {
         $socio = new Socio;
-        
+
+        $socio->nro = $request->get('nro');
         $socio->nombre = $request->get('nombre');
         $socio->apellido = $request->get('apellido');
         //$socio->fecha_nac = DateHelper::formatToDB($request->get('fecha_nac'));
@@ -120,7 +123,7 @@ class SociosController extends Controller
         $socio->estado_civil = $request->get('estado_civil');
         $socio->protector = $request->get('protector');
         $socio->deporte_id = $request->get('deporte_id');
-        
+
         if (Input::hasFile('imagen'))
         {
             $file = Input::file('imagen');

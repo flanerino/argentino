@@ -42,7 +42,7 @@ Route::prefix('deportes')->group(function(){
 // Rutas de la parte SOCIOS
 Route::name('delete_socio_path')->delete('/socios/{socio}', 'SociosController@delete_socio');
 Route::name('edit_socio_path')->get('/socios/{socio}/edit','SociosController@edit_socio');
-Route::name('update_socio_path')->put('/socios/{socio}','SociosController@update_socio');
+Route::name('update_socio_path')->put('/socios/{socio}/update','SociosController@update_socio');
 Route::name('create_socio_path')->get('/socios/create', 'SociosController@create_socio');
 Route::name('store_socio_path')->post('/socios', 'SociosController@store_socio');
 Route::name('socio_path')->get('/socios/{socio}', 'SociosController@show_socio');

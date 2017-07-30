@@ -16,6 +16,7 @@ class CreateSociosTable extends Migration
         Schema::create('socios', function (Blueprint $table) {
 
             $table->increments('id');
+            $table->integer("nro")->unique();
       			$table->string('nombre');
       			$table->string('apellido');
       			$table->date('fecha_nac')->nullable();
