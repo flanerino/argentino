@@ -52,7 +52,7 @@
                             <select name="deporte_id" class="form-control">
                                 <option value="">Seleccione un deporte</option>
                                 @foreach($deportes as $deporte)
-                                    <option <?if($socio->deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->deporte}}</li></option>
+                                    <option <?if($socio->deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
                                 @endforeach
                             </select>
                         </div>

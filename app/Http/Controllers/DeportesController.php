@@ -2,7 +2,6 @@
 
 namespace Argentino\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Argentino\Http\Controllers\Controller;
 use Argentino\deporte;
 use Argentino\Http\Requests\CreateDeporteRequest;
@@ -15,49 +14,63 @@ class DeportesController extends Controller
         $this->middleware('auth');
     }
 
-    public function showListaDeportes(){
-      $deportes = deporte::orderBy('id', 'desc')->paginate(10);
+    public function showListaDeportes()
+    {
+        $deportes = deporte::orderBy('id', 'desc')->paginate(10);
 
-      return view('deportes.deportes-lista')->with([
-        'deportes' => $deportes
-      ]);
+        return view('deportes.deportes-lista')->with([
+            'deportes' => $deportes
+        ]);
     }
 
-    public function createDeporte(){
-      return view('deportes.deporte-create');
+    public function createDeporte()
+    {
+        return view('deportes.deporte-create');
     }
 
-    public function storeDeporte(CreateDeporteRequest $request){
-      $deporte = new deporte;
-      $deporte->deporte = $request->deporte;
-      $deporte->cuota = $request->cuota;
-      $deporte->id_padre = $request->id_padre;
-      $deporte->save();
+    public function storeDeporte(CreateDeporteRequest $request)
+    {
+        $deporte = new deporte;
+        $deporte->deporte = $request->deporte;
+        $deporte->cuota = $request->cuota;
+        $deporte->id_padre = $request->id_padre;
+            
+        $deporte->save();
 
-      session()->flash('msj', 'Deporte Generado');
+        if($request->id_padre)
+        {
+            $deportePadre = Deporte::find($request->id_padre);            
+            $deporte->orden=$deportePadre->orden.'->'.$deporte->id;        
+        }        
+        
+        session()->flash('msj', 'Deporte Generado');
 
-      return redirect()->route('deportes.lista');
+        return redirect()->route('deportes.lista');
     }
 
-    public function editDeporte(deporte $deporte){
-      return view('deportes.deporte-edit')->with(['deporte' => $deporte]);
+    public function editDeporte(deporte $deporte)
+    {
+        return view('deportes.deporte-edit')->with(['deporte' => $deporte]);
     }
 
-    public function updateDeporte(deporte $deporte, UpdateDeporteRequest $request){
-      $deporte->update(
+    public function updateDeporte(deporte $deporte, UpdateDeporteRequest $request)
+    {
+        $deporte->update(
             $request->only('deporte', 'cuota')
         );
+        
         session()->flash('msj', 'Deporte Actualizado');
 
         return redirect()->route('deportes.lista', ['deporte' => $deporte->id]);
     }
 
-    public function deleteDeporte(deporte $deporte){
+    public function deleteDeporte(deporte $deporte)
+    {
 
-      $deporte->delete();
+        $deporte->delete();
 
-      session()->flash('msj', 'Deporte Eliminado');
+        session()->flash('msj', 'Deporte Eliminado');
 
-      return redirect()->route('deportes.lista');
+        return redirect()->route('deportes.lista');
     }
 }

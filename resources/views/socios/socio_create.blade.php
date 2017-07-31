@@ -48,7 +48,7 @@
                             <select name="deporte_id" class="form-control">
                                 <option value="">Seleccione un deporte</option>
                                 @foreach($deportes as $deporte)
-                                    <option value="{{$deporte->id}}"><li>{{$deporte->deporte}}</li></option>
+                                    <option value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
                                 @endforeach
                             </select>
                         </div>
