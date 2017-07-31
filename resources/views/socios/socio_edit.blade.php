@@ -21,10 +21,10 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            @include('socios.errors')        
+            @include('socios.errors')
             <div class="row">
                 <div class="col-md-1 col-sm-1 col-xs-12 profile_left" style="overflow:hidden">
-                    
+
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-12 profile_left" style="overflow:hidden">
                     <div class="profile_img">
@@ -56,7 +56,14 @@
                                 @endforeach
                             </select>
                         </div>
-                    </div>                     
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">N&uacutemero de Socio <span class="required">*</span>
+                        </label>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input type="text" name="nro" id="nro" required="required" class="form-control col-md-7 col-xs-12" value="{{$socio->nro}}">
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre <span class="required">*</span>
                         </label>
@@ -70,7 +77,7 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input type="text" id="apellido" name="apellido" required="required" class="form-control col-md-7 col-xs-12" value="{{$socio->apellido}}">
                         </div>
-                    </div>                    
+                    </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">DNI<span class="required">*</span>
                         </label>
@@ -102,23 +109,23 @@
                                 <option <?if(old('estado_civil')==4) echo 'selected';?> value="4">Viudo/a</option>
                             </select>
                         </div>
-                    </div>                   
+                    </div>
                     <div class="form-group">
                         <label class="control-label col-md-4 col-sm-4 col-xs-12">Tel&eacutefono</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <input id="telefono" name="telefono" class="form-control col-md-7 col-xs-12" type="text" value="{{$socio->telefono}}">
                         </div>
-                    </div>                                      
+                    </div>
                 </div>
-                <div class="col-md-9 col-sm-9 col-xs-12">                    
+                <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio<span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input id="domicilio" name="domicilio" class="form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->domicilio}}">
                         </div>
-                    </div>                    
+                    </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro<span class="required">*</span>
                         </label>
@@ -132,15 +139,15 @@
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input id="email" name="email" class="form-control col-md-7 col-xs-12" type="text" value="{{$socio->email}}">
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
             <div class="ln_solid"></div>
 	    <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">                                
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group pull-right">
                             <button type="submit" class="btn btn-success">Guardar</button>
-                            <a class="btn btn-primary" href="{{ route('socios_path') }}">Cancelar</a>                            
+                            <a class="btn btn-primary" href="{{ route('socios_path') }}">Cancelar</a>
                     </div>
                 </div>
             </div>

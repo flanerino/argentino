@@ -78,7 +78,9 @@ class SociosController extends Controller
         {
             $socio->protector = $request->get('protector');
         }
-        $socio->update($request->only('nombre',
+        $socio->update($request->only(
+                'nro',
+                'nombre',
                 'apellido',
                 'fecha_nac',
                 'email',
@@ -107,7 +109,7 @@ class SociosController extends Controller
     public function store_socio(CreateSocioRequest $request)
     {
         $socio = new Socio;
-        
+        $socio->nro = $request->get('nro');
         $socio->nombre = $request->get('nombre');
         $socio->apellido = $request->get('apellido');
         //$socio->fecha_nac = DateHelper::formatToDB($request->get('fecha_nac'));
