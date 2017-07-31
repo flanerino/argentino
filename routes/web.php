@@ -1,32 +1,27 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
 Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 // Rutas de la parte GASTOS
 Route::prefix('gastos')->group(function(){
-    Route::post('/edit-gasto/{gasto}', 'GastosController@updateGasto')->name('update.gasto');    
+    Route::post('/edit-gasto/{gasto}', 'GastosController@updateGasto')->name('update.gasto');
     Route::get('/create-gasto', 'GastosController@createGasto')->name('create.gasto');
     Route::post('/create-gasto', 'GastosController@storeGasto')->name('store.gasto');
     Route::get('/lista', 'GastosController@showListaGastos')->name('gastos.lista');
-    Route::get('/edit-gasto/{gasto}', 'GastosController@editGasto')->name('edit.gasto');  
+    Route::get('/edit-gasto/{gasto}', 'GastosController@editGasto')->name('edit.gasto');
     Route::delete('/lista/{gasto}', 'GastosController@deleteGasto')->name('delete.gasto');
+});
+
+// Rutas de la parte INGRESOS
+Route::prefix('ingresos')->group(function(){
+    Route::post('/edit-ingreso/{ingreso}', 'IngresosController@updateIngreso')->name('update.ingreso');
+    Route::get('/create-ingreso', 'IngresosController@createIngreso')->name('create.ingreso');
+    Route::post('/create-ingreso', 'IngresosController@storeIngreso')->name('store.ingreso');
+    Route::get('/lista', 'IngresosController@showListaIngresos')->name('ingresos.lista');
+    Route::get('/edit-ingreso/{ingreso}', 'IngresosController@editIngreso')->name('edit.ingreso');
+    Route::delete('/lista/{ingreso}', 'IngresosController@deleteIngreso')->name('delete.ingreso');
 });
 
 // Rutas de la parte DEPORTES

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@php ($title = 'Ingresar Gasto')
+@php ($title = 'Editar Ingreso')
 
 @section('content')
-<h2>Ingresar Gasto</h2>
-@include('gastos.msjs')
-<form action="{{ route('store.gasto') }}" files=true class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
+<h2>Editar Ingreso</h2>
+@include('ingresos.msjs')
+<form action="{{ route('update.ingreso', ['ingreso' => $ingreso]) }}" files=true class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="x_panel">
         <div class="x_title">
-            <h2><i class="fa fa-usd" aria-hidden="true"></i> Gastos <small>Crear Gasto</small></h2>
+            <h2><i class="fa fa-dollar" aria-hidden="true"></i> Ingreso <small>{{$ingreso->concepto}}</small></h2>
             <ul class="nav navbar-right panel_toolbox">
                 <li>
                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -21,7 +21,7 @@
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
-            @include('gastos.errors')
+            @include('ingresos.errors')
             <div class="row">
                 <div class="col-md-6 col-sm-6 col-xs-12 profile_left">
                     <div class="form-group">
@@ -29,23 +29,15 @@
                         Concepto <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input id="concepto" required="required" name="concepto" class="form-control col-md-7 col-xs-12" type="text" value="{{ old('concepto') }}">
+                            <input id="concepto" name="concepto" class="form-control col-md-7 col-xs-12" type="text" value="{{$ingreso->concepto}}">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="num_factura">
-                        N° de Factura
+                        N° de Recibo
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-8">
-                            <input id="num_factura" type="text" name="num_factura" class="form-control col-md-7 col-xs-12" value="{{ old('num_factura') }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="proveedor">
-                        Proveedor
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-10">
-                            <input id="proveedor" type="text" name="proveedor" class="form-control col-md-7 col-xs-12" value="{{ old('proveedor') }}">
+                            <input id="num_recibo" type="text" name="num_recibo" class="form-control col-md-7 col-xs-12" value="{{$ingreso->num_recibo}}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -53,7 +45,7 @@
                         Fecha
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
-                            <input id="fecha" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ old('fecha') }}">
+                            <input id="fecha" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{$ingreso->fecha}}">
                         </div>
                     </div>
                     <div class="form-group">
@@ -61,46 +53,35 @@
                         Monto <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
-                            <input id="monto" required="required" name="monto" class="form-control col-md-7 col-xs-12" data-inputmask="'alias': 'currency', 'groupSeparator': '', 'prefix': ''" type="text" value="{{ old('monto') }}">
+                            <input id="monto" name="monto" class="form-control col-md-7 col-xs-12" data-inputmask="'alias': 'currency', 'groupSeparator': '', 'prefix': ''" type="text" value="{{$ingreso->monto}}">
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 profile_left">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                        Fecha de Pago
+                        Fecha de Cobro
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
-                            <input id="fecha_pago" name="fecha_pago" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ old('fecha_pago') }}">
+                            <input id="fecha_cobro" name="fecha_cobro" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{$ingreso->fecha_cobro}}">
                         </div>
                     </div>
-
-                    <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                        Fecha de Vencimiento
-                        </label>
-                        <div class="col-md-3 col-sm-3 col-xs-8">
-                            <input id="fecha_vencimiento" name="fecha_vencimiento" type="text" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ old('fecha_vencimiento') }}">
-                        </div>
-                    </div>
-
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">
                         Observacion
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <textarea id="observacion" class="form-control col-md-7 col-xs-12" name="observacion" rows="8" cols="80">{{ old('observacion') }}</textarea>
+                            <textarea id="observacion" class="form-control col-md-7 col-xs-12" name="observacion" rows="8" cols="80">{{$ingreso->observacion}}</textarea>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="ln_solid"></div>
-
 	    <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group pull-right">
                         <button type="submit" class="btn btn-success">Guardar</button>
-                        <a type="button" href="{{ route('gastos.lista') }}" class="btn btn-primary">Cancelar</a>
+                        <a type="button" href="{{ route('ingresos.lista') }}" class="btn btn-primary">Cancelar</a>
                     </div>
                 </div>
             </div>

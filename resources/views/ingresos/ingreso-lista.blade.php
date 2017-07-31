@@ -1,38 +1,34 @@
 @extends('layouts.app')
 
-@php ($title = 'Gastos')
+@php ($title = 'Ingresos')
 
 @section('content')
 
 <div class="x_panel">
     <div class="x_title">
-        <h2><i class="fa fa-usd" aria-hidden="true"></i> Gastos</h2>
-        <span class="pull-right"><a class="btn btn-success" href="{{ route('create.gasto') }}">Nuevo Gasto</a></span>
+        <h2><i class="fa fa-usd" aria-hidden="true"></i> Ingresos</h2>
+        <span class="pull-right"><a class="btn btn-success" href="{{ route('create.ingreso') }}">Nuevo Ingreso</a></span>
         <div class="clearfix"></div>
     </div>
-    @include('gastos.msjs')
+    @include('ingresos.msjs')
     <div class="x_content" style="display: block; ">
         <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="x_panel">
                         <div class="x_content">
-                            <form class="form-inline" action="/gastos/lista" method="GET">
+                            <form class="form-inline" action="/ingresos/lista" method="GET">
                                 <div class="form-group">
                                     <label for="middle-name">Concepto</label>
-                                    <input id="concepto" name="concepto" class="form-control" type="text" value="{{$concepto}}">
+                                    <input id="concepto" name="concepto" class="form-control" type="text" value="{{ $concepto }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="num_factura">N° de Factura</label>
-                                    <input id="num_factura" type="text" name="num_factura" class="form-control" value="{{$nrofactura}}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="proveedor">Proveedor</label>
-                                    <input id="proveedor" type="text" name="proveedor" class="form-control" value="{{$proveedor}}">
+                                    <label for="num_recibo">N° de Recibo</label>
+                                    <input id="num_recibo" type="text" name="num_recibo" class="form-control" value="{{ $nrorecibo }}">
                                 </div>
                                 <div class="form-group pull-right">
                                   <button type="submit" class="btn btn-default">Filtrar</button>
-                                  <a class="btn btn-danger" href="/gastos/lista"><i class="fa fa-times"></i></a>
+                                  <a class="btn btn-danger" href="/ingresos/lista"><i class="fa fa-times"></i></a>
                                 </div>
                             </form>
                         </div>
@@ -44,33 +40,28 @@
                     <table id="tableGasto" class="table table-striped table-bordered tableDinamica">
                         <thead>
                             <tr role="row">
-                                <th>N° Factura</th>
-                                <th>Proveedor</th>
+                                <th>N° Recibo</th>
                                 <th>Concepto</th>
                                 <th>Fecha</th>
                                 <th>Monto</th>
-                                <th>Fecha de Pago</th>
-                                <th>Fecha de Vencimiento</th>
+                                <th>Fecha de Cobro</th>
                                 <th>#</th>
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($gastos as $gasto)
+                      @foreach ($ingresos as $ingreso)
                             <tr role="row" class="odd">
-                                <td>{{ $gasto->num_factura }}</td>
-                                <td>{{ $gasto->proveedor }}</td>
+                                <td>{{ $ingreso->num_recibo }}</td>
+                                <td>{{ $ingreso->concepto }}</td>
+                                <td>{{ $ingreso->fecha }}</td>
+                                <td>${{ $ingreso->monto }}</td>
+                                <td>{{ $ingreso->fecha_cobro }}</td>
                                 <td>
-                                    <a href="{{ route('edit.gasto', ['socio' => $gasto->id] ) }}"> {{ $gasto->concepto }} </a>
-                                </td>
-                                <td>{{ $gasto->fecha }}</td>
-                                <td>${{ $gasto->monto }}</td>
-                                <td>{{ $gasto->fecha_pago }}</td>
-                                <td>{{ $gasto->fecha_vencimiento }}</td>
-                                <td>
-                                    <a href="{{ route('edit.gasto', ['gasto' => $gasto->id]) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a>
-                                    <a class="btn btn-danger" title="Eliminar" data-toggle="modal" data-target="#delete_register{{$gasto->id}}" type="button"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ route('edit.ingreso', ['ingreso' => $ingreso->id]) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a>
 
-                                    <div id="delete_register{{$gasto->id}}" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <a class="btn btn-danger" title="Eliminar" data-toggle="modal" data-target="#delete_register{{$ingreso->id}}" type="button"><i class="fa fa-trash"></i></a>
+
+                                    <div id="delete_register{{$ingreso->id}}" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-sm">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -83,7 +74,7 @@
                                                         Seguro que desea eliminarlo?
                                                     </h4>
                                                 </div>
-                                                <form action="{{ route('delete.gasto', ['gasto' => $gasto->id]) }}" method="POST">
+                                                <form action="{{ route('delete.ingreso', ['ingreso' => $ingreso->id]) }}" method="POST">
                                                     {{ csrf_field() }}
                                                     {{ method_field('DELETE') }}
                                                     <div class="modal-footer">
