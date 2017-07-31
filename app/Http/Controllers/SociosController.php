@@ -36,7 +36,7 @@ class SociosController extends Controller
         $deportes = Deporte::all();
         
         $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
-        //$socios = Socio::with('deporte')->orderBy('id', 'asc')->get();
+
         return view('socios/socios_list')->with(
                 [   'socios' => $socios, 
                     'deportes' => $deportes,
@@ -92,7 +92,7 @@ class SociosController extends Controller
 
         session()->flash('msj','Socio Editado');
 
-        return redirect()->route('socio_path', ['socio' => $socio->id]);
+        return redirect()->route('edit_socio_path', ['socio' => $socio->id] );
     }
 
     // Creado de Socios
@@ -105,7 +105,7 @@ class SociosController extends Controller
 
     //Guardado de Socio en la DB
     public function store_socio(CreateSocioRequest $request)
-    {        
+    {
         $socio = new Socio;
         
         $socio->nombre = $request->get('nombre');

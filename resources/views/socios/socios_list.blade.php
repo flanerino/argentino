@@ -4,11 +4,9 @@
 
 @section ('content')
 
-
 <div class="x_panel">
-
     <div class="x_title">
-        <h2> <i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
+        <h2><i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
         <div class=pull-right> <a href="{{ route('create_socio_path') }}" class="btn btn-success">Nuevo Socio</a></div>
         <div class="clearfix"></div>
     </div>
@@ -56,6 +54,7 @@
                                 <th>#</th>
                             </tr>
                         </thead>
+                        <tbody>
                         @foreach($socios as $socio)
                             <tr role="row" class="odd">
                                 <td class="sorting_1">
@@ -102,13 +101,13 @@
                                 </td>
                             </tr>
                         @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection
 
 @section('styles')

@@ -15,14 +15,14 @@ class CreateGastosTable extends Migration
     {
         Schema::create('gastos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('num_factura');
-            $table->string('proveedor');
+            $table->integer('num_factura')->nullable();
+            $table->string('proveedor')->nullable();
             $table->string('concepto');
             $table->date('fecha');
             $table->double('monto');
-            $table->date('fecha_pago');
-            $table->date('fecha_vencimiento');
-            $table->string('observacion');
+            $table->date('fecha_pago')->nullable();
+            $table->date('fecha_vencimiento')->nullable();
+            $table->string('observacion')->nullable();
             $table->timestamps();
         });
     }

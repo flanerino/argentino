@@ -60,7 +60,6 @@ class Socio extends Model
             {
                 $query->where('deporte_id', '=', $deporte_id);
             });
-        }
-        
-    }    
+        }        
+    }
 }
