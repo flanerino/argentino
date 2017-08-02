@@ -15,11 +15,11 @@ class CreateCuotasTable extends Migration
     {
         Schema::create('cuotas', function (Blueprint $table) {
             $table->increments('id');
-      			$table->integer('mes');
-      			$table->integer('anio');
-      			$table->integer('deportista_id');
-            $table->integer('fecha_pago');
-      			$table->timestamps();
+            $table->integer('mes');
+            $table->integer('anio');
+            $table->integer('deportista_id');
+            $table->integer('fecha_pago')->nullable();
+            $table->timestamps();
         });
     }
 

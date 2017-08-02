@@ -3,7 +3,9 @@
 namespace Argentino\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Dompdf\Dompdf;
+use Argentino\socio;
+use Argentino\Gasto;
+use DB;
 
 class HomeController extends Controller
 {
@@ -14,17 +16,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('home');
-    }
-
-    public function prueba()
-    {
-
-      $view = \View::make('prueba')->render();
-      $pdf = new Dompdf();
-        $pdf->loadHtml($view);
-        $pdf->setPaper('A4', 'portrait');
-        $pdf->render();
-        $pdf->stream("prueba.pdf", array("Attachment"=>0));
+        $socios=Socio::count();
+        $ingresos=0;
+        $gastos=DB::table('gastos')->whereNotNull('fecha_pago')->sum('monto');                
+        $balance=0;
+        return view('home',compact('socios','ingresos','gastos','balance'));
     }
 }

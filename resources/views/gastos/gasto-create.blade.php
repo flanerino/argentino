@@ -3,10 +3,8 @@
 @php ($title = 'Ingresar Gasto')
 
 @section('content')
-
-  <h2>Ingresar Gasto</h2>
-  @include('gastos.msjs')
-
+<h2>Ingresar Gasto</h2>
+@include('gastos.msjs')
 <form action="{{ route('store.gasto') }}" files=true class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="x_panel">

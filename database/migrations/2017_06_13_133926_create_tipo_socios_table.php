@@ -15,7 +15,7 @@ class CreateTipoSociosTable extends Migration
     {
         Schema::create('tipo_socios', function (Blueprint $table) {
             $table->increments('id');
-			      $table->string('tipo');
+            $table->string('tipo');
         });
     }
 

@@ -23,8 +23,11 @@ class UpdateSocioRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+      return [
+          'nombre'=> 'required',
+          'apellido' => 'required',
+  //        'protector' => 'required_without:deporte_id',
+          'deporte_id' => 'required_without:protector'
+      ];
     }
 }

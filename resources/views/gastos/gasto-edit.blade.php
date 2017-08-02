@@ -3,8 +3,8 @@
 @php ($title = 'Editar Gasto')
 
 @section('content')
-  <h2>Editar Gasto</h2>
-  @include('gastos.msjs')
+<h2>Editar Gasto</h2>
+@include('gastos.msjs')
 <form action="{{ route('update.gasto', ['gasto' => $gasto]) }}" files=true class="form-horizontal form-label-left" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="x_panel">
@@ -97,10 +97,10 @@
             <div class="ln_solid"></div>
 	    <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="form-group pull-right">
-                      <button type="submit" class="btn btn-success">Guardar</button>
-                      <a type="button" href="{{ route('gastos.lista') }}" class="btn btn-primary">Cancelar</a>
-                  </div>
+                    <div class="form-group pull-right">
+                        <button type="submit" class="btn btn-success">Guardar</button>
+                        <a type="button" href="{{ route('gastos.lista') }}" class="btn btn-primary">Cancelar</a>
+                    </div>
                 </div>
             </div>
         </div>

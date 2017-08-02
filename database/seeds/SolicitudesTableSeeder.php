@@ -14,7 +14,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio',
           'apellido' => 'socio',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1980-6-1',
           'email' => 'socio@gmail.com',
           'dni' => '39085467',
@@ -30,7 +29,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio1',
           'apellido' => 'socio1',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1990-4-10',
           'email' => 'socio1@gmail.com',
           'dni' => '40805333',
@@ -46,7 +44,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio2',
           'apellido' => 'socio2',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '2000-10-20',
           'email' => 'socio2@gmail.com',
           'dni' => '41987345',
@@ -62,7 +59,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio3',
           'apellido' => 'socio3',
-          'nacionalidad' => 'boliviano',
           'fecha_nac' => '1997-3-13',
           'email' => 'socio3@gmail.com',
           'dni' => '40000467',
@@ -78,7 +74,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio4',
           'apellido' => 'socio4',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '2000-12-22',
           'email' => 'socio4@gmail.com',
           'dni' => '41222333',
@@ -94,7 +89,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio5',
           'apellido' => 'socio5',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1970-11-28',
           'email' => 'socio5@gmail.com',
           'dni' => '38145712',
@@ -110,7 +104,6 @@ class SolicitudesTableSeeder extends Seeder
       DB::table('solicitudes')->insert([
           'nombre' => 'socio6',
           'apellido' => 'socio6',
-          'nacionalidad' => 'argentino',
           'fecha_nac' => '1970-11-28',
           'email' => 'socio6@gmail.com',
           'dni' => '38245712',
