@@ -16,8 +16,6 @@ class GastosController extends Controller
         $this->middleware('auth');
     }
 
-    // Metodos para la parte de gastos
-
     // Metodo que devuleve el formulario de ingreso de gastos
     public function createGasto()
     {
@@ -49,7 +47,7 @@ class GastosController extends Controller
         $nrofactura=Input::get('nrofactura');
         $proveedor=Input::get('proveedor');
         $concepto=Input::get('concepto');
-        
+
         $gastos = Gasto::filter($nrofactura,$proveedor,$concepto)->orderBy('id', 'asc')->get();
 
         return view('gastos.gastos-lista')->with(
@@ -68,7 +66,7 @@ class GastosController extends Controller
 
     // Metodo para actualizar un gasto
     public function updateGasto(Gasto $gasto, UpdateGastoRequest $request)
-    {        
+    {
         $gasto->update($request->only(
             'num_factura',
             'proveedor',
@@ -79,7 +77,7 @@ class GastosController extends Controller
             'fecha_vencimiento',
             'observacion'
         ));
-        
+
         session()->flash('msj', 'Gasto Actualizado');
         return redirect()->route('edit.gasto', ['gasto' => $gasto->id]);
     }

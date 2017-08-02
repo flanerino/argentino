@@ -29,9 +29,10 @@
     <link href="/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="/css/custom.css" rel="stylesheet">
+    <!-- Recibo style -->
+    <link rel="stylesheet" href="/css/recibo-ingresos.css">
     @show
 </head>
 

@@ -9,7 +9,12 @@
     {{ csrf_field() }}
     <div class="x_panel">
         <div class="x_title">
-            <h2><i class="fa fa-dollar" aria-hidden="true"></i> Ingreso <small>{{$ingreso->concepto}}</small></h2>
+            <h2>
+              <i class="fa fa-dollar" aria-hidden="true"></i> Ingreso
+              <small>
+                {{$ingreso->concepto}}
+              </small>
+            </h2>
             <ul class="nav navbar-right panel_toolbox">
                 <li>
                     <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -79,10 +84,13 @@
             <div class="ln_solid"></div>
 	    <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="form-group pull-right">
-                        <button type="submit" class="btn btn-success">Guardar</button>
-                        <a type="button" href="{{ route('ingresos.lista') }}" class="btn btn-primary">Cancelar</a>
-                    </div>
+                  <span class="pull-left">
+                    <a type="button" href="{{ route('recibo.ingreso') }}" class="btn btn-success">Generar Recibo</a>
+                  </span>
+                  <div class="form-group pull-right">
+                      <button type="submit" class="btn btn-success">Guardar</button>
+                      <a type="button" href="{{ route('ingresos.lista') }}" class="btn btn-primary">Cancelar</a>
+                  </div>
                 </div>
             </div>
         </div>

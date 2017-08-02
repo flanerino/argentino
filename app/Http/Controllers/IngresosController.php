@@ -83,4 +83,10 @@ class IngresosController extends Controller
       session()->flash('msj', 'Ingreso Eliminado');
       return redirect()->route('ingresos.lista');
   }
+
+  // Metodo que devuelve el recibo (pdf) de un ingreso
+  public function generarRecibo()
+  {
+    return view('ingresos.recibo');
+  }
 }

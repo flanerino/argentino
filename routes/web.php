@@ -22,6 +22,7 @@ Route::prefix('ingresos')->group(function(){
     Route::get('/lista', 'IngresosController@showListaIngresos')->name('ingresos.lista');
     Route::get('/edit-ingreso/{ingreso}', 'IngresosController@editIngreso')->name('edit.ingreso');
     Route::delete('/lista/{ingreso}', 'IngresosController@deleteIngreso')->name('delete.ingreso');
+    Route::get('/recibo', 'IngresosController@generarRecibo')->name('recibo.ingreso');
 });
 
 // Rutas de la parte DEPORTES
