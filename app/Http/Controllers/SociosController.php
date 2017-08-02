@@ -33,13 +33,13 @@ class SociosController extends Controller
     {
         $protector=Input::get('protector');
         $deporte_id=Input::get('deporte_id');
-            
+
         $deportes = Deporte::all();
-        
+
         $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
 
         return view('socios/socios_list')->with(
-                [   'socios' => $socios, 
+                [   'socios' => $socios,
                     'deportes' => $deportes,
                     'protector' => $protector,
                     'deporte_id' => $deporte_id
@@ -123,7 +123,7 @@ class SociosController extends Controller
         $socio->estado_civil = $request->get('estado_civil');
         $socio->protector = $request->get('protector');
         $socio->deporte_id = $request->get('deporte_id');
-        
+
         if (Input::hasFile('imagen'))
         {
             $file = Input::file('imagen');
@@ -144,6 +144,6 @@ class SociosController extends Controller
       $pdf->loadHtml($view);
       $pdf->setPaper('A4', 'portrait');
       $pdf->render();
-      $pdf->stream("prueba.pdf", array("Attachment"=>0));
+      $pdf->stream("Carnet.pdf", array("Attachment"=>0));
   }
 }

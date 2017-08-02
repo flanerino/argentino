@@ -5,7 +5,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/prueba', 'HomeController@prueba')->name('prueba');
-Route::get('/carnet/{socio}', 'SociosController@prueba')->name('carnet');
+Route::get('Socios/Carnet/{socio}', 'SociosController@prueba')->name('carnet');
 
 
 
