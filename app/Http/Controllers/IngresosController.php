@@ -8,6 +8,7 @@ use Argentino\Ingreso;
 use Argentino\Http\Requests\CreateIngresoRequest;
 use Argentino\Http\Requests\UpdateIngresoRequest;
 use Illuminate\Support\Facades\Input;
+use Dompdf\Dompdf;
 
 class IngresosController extends Controller
 {
@@ -30,6 +31,7 @@ class IngresosController extends Controller
       $ingreso->concepto = $request->concepto;
       $ingreso->fecha = $request->fecha;
       $ingreso->monto = $request->monto;
+      $ingreso->forma_pago = $request->forma_pago;
       $ingreso->fecha_cobro = $request->fecha_cobro;
       $ingreso->observacion = $request->observacion;
       $ingreso->save();
@@ -68,6 +70,7 @@ class IngresosController extends Controller
           'concepto',
           'fecha',
           'monto',
+          'forma_pago',
           'fecha_cobro',
           'observacion'
       ));
@@ -85,8 +88,13 @@ class IngresosController extends Controller
   }
 
   // Metodo que devuelve el recibo (pdf) de un ingreso
-  public function generarRecibo()
+  public function generarRecibo(Ingreso $ingreso)
   {
-    return view('ingresos.recibo');
+    $view = \View::make('ingresos.recibo',compact('ingreso'))->render();
+    $pdf = new Dompdf();
+      $pdf->loadHtml($view);
+      $pdf->setPaper('A4', 'portrait');
+      $pdf->render();
+      $pdf->stream("recibo.pdf", array("Attachment"=>0));
   }
 }

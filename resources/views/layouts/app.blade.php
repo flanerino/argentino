@@ -31,8 +31,6 @@
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/css/custom.css" rel="stylesheet">
-    <!-- Recibo style -->
-    <link rel="stylesheet" href="/css/recibo-ingresos.css">
     @show
 </head>
 
@@ -147,7 +145,7 @@
     <script src="/js/custom.js"></script>
 
     <!-- Input-Mask -->
-    <script src="../vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 
     @show
 </body>

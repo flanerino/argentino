@@ -1,85 +1,63 @@
-@extends('layouts.app')
-
 @php ($title = 'Recibo')
 
-@section('content')
-
-<div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-    		<div class="invoice-title">
+<div>
+    <div>
+        <div>
+    		<div>
           <span>
-            <img src="{{ URL::asset('images/sources/user128x128.png') }}">
+            <img src="./images/sources/user128x128.png" alt="">
           </span>
-    			<h2></h2><h3 class="pull-right"># 12345</h3>
+    			<h3 style="margin-left: 600px; margin-top: -100px;"># {{$ingreso->num_recibo}}</h3>
     		</div>
     		<hr>
-    		<div class="row">
-    			<div class="col-xs-6">
+    			<div style="margin: 0px; padding: 0px; float: left;">
     				<address>
-    				<strong>Para:</strong><br>
-    					John Smith<br>
-    					1234 Main<br>
-    					Apt. 4B<br>
-    					Springfield, ST 54321
+        			<strong>Emitido por:</strong><br>
+    					Club Atletico y Cultural Argentino<br>
+    					Calle 32 Nº 750<br>
+    					General Pico, La Pampa, Argentina
     				</address>
     			</div>
-    			<div class="col-xs-6 text-right">
+          <div style=" margin: 0px; padding: 0px; float: right; margin-right: 30px;">
     				<address>
-        			<strong>De:</strong><br>
-    					Jane Smith<br>
-    					1234 Main<br>
-    					Apt. 4B<br>
-    					Springfield, ST 54321
+        			<strong>Forma de pago:</strong><br>
+    					{{ $ingreso->forma_pago }}
     				</address>
     			</div>
-    		</div>
-    		<div class="row">
-    			<div class="col-xs-12 text-right">
-    				<address>
-    					<strong>Fecha:</strong><br>
-    					March 7, 2014<br><br>
-    				</address>
-    			</div>
+    		<div style="float: right; margin-right: 100px;">
+  				<address>
+  					<strong>Fecha:</strong><br>
+  					{{$ingreso->fecha}}<br><br>
+  				</address>
     		</div>
     	</div>
     </div>
 
-    <div class="row">
-    	<div class="col-md-6">
-    		<div class="panel panel-default">
-    			<div class="panel-heading">
-    				<h3 class="panel-title">
+    <div style="margin-top: 130px; float: left; border-top: 2px solid black;">
+    	<div>
+    		<div>
+    			<div>
+    				<h3>
               <strong>
                 Detalle
               </strong>
             </h3>
     			</div>
-    			<div class="panel-body">
-    				<div class="table-responsive">
-    					<table class="table table-condensed table-bordered">
-    						<thead>
-                    <tr>
-        							<td><strong>Concepto</strong></td>
-        							<td class="text-center"><strong>Total</strong></td>
-                    </tr>
-    						</thead>
-    						<tbody>
-    							<!-- foreach ($order->lineItems as $line) or some such thing here -->
-                  <tr>
-        						<td>Concepto</td>
-    								<td class="text-center">$600.00</td>
-    							</tr>
-    							<tr>
-    								<td class="thick-line"></td>
-    								<td class="thick-line"></td>
-    							</tr>
-    						</tbody>
-    					</table>
-    				</div>
-    			</div>
+          <hr>
+          <div style="border: 1px solid; margin-left: 100px; width: 100%; margin-right: 100px;">
+            <div style="float: left; padding: 10px;">
+              <p style="border-bottom: 2px solid black;"><strong>Total</strong></p>
+              <p>${{$ingreso->monto}}</p>
+            </div>
+
+            <div style="margin-left: 100px; padding: 10px; border-left: 1px solid black;">
+              <p style="border-bottom: 2px solid black;">
+                <strong>Concepto</strong>
+              </p>
+              <p>{{$ingreso->concepto}}</p>
+            </div>
+          </div>
     		</div>
     	</div>
     </div>
 </div>
-@endsection

@@ -16,7 +16,8 @@ class CreateIngresoRequest extends FormRequest
         return [
           'concepto' => 'required',
           'fecha' => 'required',
-          'monto' => 'required'
+          'monto' => 'required',
+          'forma_pago' => 'required'
         ];
     }
 }

@@ -19,6 +19,7 @@ class CreateIngresosTable extends Migration
             $table->string('concepto');
             $table->date('fecha');
             $table->double('monto');
+            $table->string('forma_pago');
             $table->date('fecha_cobro')->nullable();
             $table->string('observacion')->nullable();
             $table->timestamps();
