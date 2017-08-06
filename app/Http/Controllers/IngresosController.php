@@ -26,6 +26,8 @@ class IngresosController extends Controller
   // Metodo para guardar un ingreso
   public function storeIngreso(CreateIngresoRequest $request)
   {
+
+    
       $ingreso = new Ingreso;
       $ingreso->num_recibo = $request->num_recibo;
       $ingreso->concepto = $request->concepto;
