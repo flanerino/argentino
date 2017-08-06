@@ -63,7 +63,7 @@
                         <div class="col-md-5 col-sm-5 col-xs-10">
                           <select class="form-control" name="forma_pago">
                             <option value="Efectivo">Efectivo</option>
-                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="Cheque">Cheque</option>
                             <option value="Transaccion Bancaria">Transaccion Bancaria</option>
                           </select>
                             <!--<input id="forma_pago" name="forma_pago" class="form-control col-md-7 col-xs-12"  type="text" value="{{ old('forma_pago') }}">-->
