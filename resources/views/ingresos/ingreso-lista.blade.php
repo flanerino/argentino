@@ -44,6 +44,7 @@
                                 <th>Concepto</th>
                                 <th>Fecha</th>
                                 <th>Monto</th>
+                                <th>Forma de Pago</th>
                                 <th>Fecha de Cobro</th>
                                 <th>#</th>
                             </tr>
@@ -55,6 +56,7 @@
                                 <td>{{ $ingreso->concepto }}</td>
                                 <td>{{ $ingreso->fecha }}</td>
                                 <td>${{ $ingreso->monto }}</td>
+                                <td>{{ $ingreso->forma_pago }}</td>
                                 <td>{{ $ingreso->fecha_cobro }}</td>
                                 <td>
                                     <a href="{{ route('edit.ingreso', ['ingreso' => $ingreso->id]) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a>
@@ -85,6 +87,11 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <a target="_blank" class="btn btn-success" href="{{ route('recibo.ingreso', ['ingreso' => $ingreso->id]) }}">
+                                      <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                                    </a>
+
                                 </td>
                             </tr>
                         @endforeach

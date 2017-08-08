@@ -61,6 +61,19 @@
                             <input id="monto" name="monto" class="form-control col-md-7 col-xs-12" data-inputmask="'alias': 'currency', 'groupSeparator': '', 'prefix': ''" type="text" value="{{$ingreso->monto}}">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Forma de Pago <span class="required">*</span>
+                        </label>
+                        <div class="col-md-5 col-sm-5 col-xs-10">
+                          <select class="form-control" name="forma_pago">
+                            <option value="{{ $ingreso->forma_pago or old('forma_pago') }}">{{ $ingreso->forma_pago or old('forma_pago') }}</option>
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="Transaccion Bancaria">Transaccion Bancaria</option>
+                          </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12 profile_left">
                     <div class="form-group">
@@ -85,7 +98,7 @@
 	    <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                   <span class="pull-left">
-                    <a type="button" href="{{ route('recibo.ingreso') }}" class="btn btn-success">Generar Recibo</a>
+                    <a target="_blank" type="button" href="{{ route('recibo.ingreso', ['ingreso' => $ingreso]) }}" class="btn btn-success">Generar Recibo</a>
                   </span>
                   <div class="form-group pull-right">
                       <button type="submit" class="btn btn-success">Guardar</button>

@@ -42,7 +42,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                        Fecha
+                        Fecha <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
                             <input id="fecha" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ old('fecha') }}">
@@ -54,6 +54,19 @@
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
                             <input id="monto" name="monto" class="form-control col-md-7 col-xs-12" data-inputmask="'alias': 'currency', 'groupSeparator': '', 'prefix': ''" type="text" value="{{ old('monto') }}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">
+                        Forma de Pago <span class="required">*</span>
+                        </label>
+                        <div class="col-md-5 col-sm-5 col-xs-10">
+                          <select class="form-control" name="forma_pago">
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Cheque">Cheque</option>
+                            <option value="Transaccion Bancaria">Transaccion Bancaria</option>
+                          </select>
+                            <!--<input id="forma_pago" name="forma_pago" class="form-control col-md-7 col-xs-12"  type="text" value="{{ old('forma_pago') }}">-->
                         </div>
                     </div>
                 </div>

@@ -27,7 +27,7 @@ Route::prefix('ingresos')->group(function(){
     Route::get('/lista', 'IngresosController@showListaIngresos')->name('ingresos.lista');
     Route::get('/edit-ingreso/{ingreso}', 'IngresosController@editIngreso')->name('edit.ingreso');
     Route::delete('/lista/{ingreso}', 'IngresosController@deleteIngreso')->name('delete.ingreso');
-    Route::get('/recibo', 'IngresosController@generarRecibo')->name('recibo.ingreso');
+    Route::get('/recibo/{ingreso}', 'IngresosController@generarRecibo')->name('recibo.ingreso');
 });
 
 // Rutas de la parte DEPORTES
@@ -48,6 +48,17 @@ Route::name('create_socio_path')->get('/socios/create', 'SociosController@create
 Route::name('store_socio_path')->post('/socios', 'SociosController@store_socio');
 //Route::name('socio_path')->get('/socios/{socio}', 'SociosController@show_socio');
 Route::name('socios_path')->get('/socios', 'SociosController@show_socios');
+
+
+// Rutas de la parte CUOTAS
+Route::name('cuotas_path')->get('/cuotas', 'CuotasController@show_cuotas');
+Route::name('create_cuota_path')->get('/cuotas/create', 'CuotasController@create_cuota');
+Route::name('store_cuotas_path')->get('/cuotas/creates', 'CuotasController@store_cuotas');
+Route::name('store_cuota_path')->post('/cuotas', 'CuotasController@store_cuota');
+Route::name('edit_cuota_path')->get('/cuotas/{cuota}', 'CuotasController@edit_cuota');
+Route::name('update_cuota_path')->post('/cuotas/{cuota}','CuotasController@update_cuota');
+Route::name('delete_cuota_path')->delete('/cuotas/{cuota}', 'CuotasController@delete_cuota');
+Route::name('pago_cuota_path')->post('/cuotas/{cuota}', 'CuotasController@pago_cuota');
 
 // 404
 Route::any( '{catchall}', function ( $page ) {

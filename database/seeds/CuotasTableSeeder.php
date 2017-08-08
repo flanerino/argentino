@@ -12,24 +12,27 @@ class CuotasTableSeeder extends Seeder
     public function run()
     {
       DB::table('cuotas')->insert([
+          'monto' => '250',
           'mes' => '3',
           'anio' => '2017',
-          'deportista_id' => '1',
-          'fecha_pago' => '10'
+          'socio_id' => '1',
+          'fecha_pago' => '2017-06-06'
       ]);
 
       DB::table('cuotas')->insert([
+          'monto' => '250',
           'mes' => '1',
           'anio' => '2017',
-          'deportista_id' => '2',
-          'fecha_pago' => '11'
+          'socio_id' => '2',
+          'fecha_pago' => '2017-06-06'
       ]);
 
       DB::table('cuotas')->insert([
+          'monto' => '250',
           'mes' => '4',
           'anio' => '2017',
-          'deportista_id' => '3',
-          'fecha_pago' => '12'
+          'socio_id' => '3',
+          'fecha_pago' => '2017-06-06'
       ]);
     }
 }

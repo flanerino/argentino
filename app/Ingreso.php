@@ -14,6 +14,7 @@ class Ingreso extends Model
       'num_recibo',
       'fecha',
       'monto',
+      'forma_pago',
       'fecha_cobro',
       'observacion'
     ];
