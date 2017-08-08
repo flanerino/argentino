@@ -16,15 +16,15 @@
     <div style="float:right;width:230px;min-height:100px;">
   </div>
     <div style="clear:both;font-family: sans-serif;margin-left: 0.2cm;line-height: 130%;">
-      Nombre:   {{$socio->nombre}}
+      <u>Nombre:</u>   {{$socio->nombre}}
     </div>
     <div style="clear:both;font-family: sans-serif;margin-left: 0.2cm;line-height: 130%;">
-        Apellido:   {{$socio->apellido}}
+        <u>Apellido:</u>   {{$socio->apellido}}
     </div>
     <div style="clear:both;font-family: sans-serif;margin-left: 0.2cm;line-height: 130%;">
-        Telefono:   {{$socio->telefono}}
+        <u>Telefono:</u>   {{$socio->telefono}}
     </div>
-    <div style="margin:0px;width:300px;font-family: sans-serif; margin-left: 1.0cm;" >
+    <div style="margin:0px;width:300px;padding:-2px;font-family: sans-serif; margin-left: 1.5cm;" >
       <p>Club Atlético y Cultural Argentino.
          <br>Calle 32 Nº 750,02302 - 423896<p>
     </div>
@@ -38,14 +38,14 @@
       </div>
 
     <br><div style="clear:both;float:right;font-family:sans-serif;width: 193px;">
-        DNI:{{$socio->dni}}
+        <u>DNI:</u>{{$socio->dni}}
       </div></br>
       <br><div style="float:right;font-family: sans-serif;width: 200px;width: 193px">
-          Deporte:{{$socio->deporte_id}}
+          <u>Deporte:</u>{{$socio->deporte_id}}
       </div></br>
       <br>
       <div style="float:right;font-family: sans-serif;width: 200px;width: 193px;">
-          Domicilio:{{$socio->domicilio}}
+          <u>Domicilio:</u>{{$socio->domicilio}}
       </div></br>
 
       <div style="margin:20px; none #000000;float:left; position: absolute;left: 100px;top:150px;">
