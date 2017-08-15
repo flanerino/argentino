@@ -17,10 +17,10 @@ class CreateIngresosTable extends Migration
             $table->increments('id');
             $table->integer('num_recibo')->nullable();
             $table->string('concepto');
-            $table->date('fecha');
+            $table->datetime('fecha');
             $table->double('monto');
             $table->string('forma_pago');
-            $table->date('fecha_cobro')->nullable();
+            $table->datetime('fecha_cobro')->nullable();
             $table->string('observacion')->nullable();
             $table->timestamps();
         });

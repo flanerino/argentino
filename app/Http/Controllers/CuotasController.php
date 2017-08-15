@@ -61,25 +61,32 @@ class CuotasController extends Controller
     return view ('cuotas.cuota_edit')->with(['cuota' => $cuota, 'deportes' => $deportes,'socios' => $socios]);
 
   }
+  
+  public function generate_cuotas(Cuota $cuota){
+	  
+  }
   public function pago_cuota(Cuota $cuota){
-  if(is_null($cuota->fecha_pago)){
-    $dt = Carbon::now()->format('Y-m-d');
+  //if(is_null($cuota->fecha_pago)){
+    $dt = Carbon::now();
     Cuota::where('id', $cuota->id)->update(array('fecha_pago' => $dt));
-    $ingreso = new Ingreso;
+    
+	$ingreso = new Ingreso;
   //  $ingreso->num_recibo = $request->num_recibo;
     $ingreso->concepto = "pago de cuota";
     $ingreso->monto = $cuota->monto;
     $ingreso->forma_pago = "Efectivo";
-    $ingreso->fecha = $dt;
-    $ingreso->fecha_cobro = $cuota->fecha_pago;
+	$dt2 = Carbon::now()->format('d/m/Y');
+    $ingreso->fecha = $dt2;
+   // $ingreso->fecha_cobro = $cuota->fecha_pago;
     $ingreso->observacion = $cuota->socio->nro;
+	
     $ingreso->save();
     session()->flash('msj','Pago Registrado');
     return redirect()->route('cuotas_path');
-  }else{
+ // }else{
     session()->flash('msj','Esta cuota ya se pagó');
     return redirect()->route('cuotas_path');
-  }
+  //}
   }
   public function delete_cuota(Cuota $cuota){
     $cuota->delete();

@@ -59,6 +59,7 @@ Route::name('edit_cuota_path')->get('/cuotas/{cuota}', 'CuotasController@edit_cu
 Route::name('update_cuota_path')->post('/cuotas/{cuota}','CuotasController@update_cuota');
 Route::name('delete_cuota_path')->delete('/cuotas/{cuota}', 'CuotasController@delete_cuota');
 Route::name('pago_cuota_path')->post('/cuotas/{cuota}', 'CuotasController@pago_cuota');
+Route::name('generate_cuotas_path')->post('/cuotas','CuotasController@generate_cuotas');
 
 // 404
 Route::any( '{catchall}', function ( $page ) {

@@ -19,7 +19,7 @@ class CreateCuotasTable extends Migration
             $table->integer('mes');
             $table->integer('anio');
             $table->integer('socio_id')->nullable();
-            $table->date('fecha_pago')->nullable();
+            $table->datetime('fecha_pago')->nullable();
             $table->timestamps();
         });
     }

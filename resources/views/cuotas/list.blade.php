@@ -7,7 +7,37 @@
 <div class="x_panel">
     <div class="x_title">
         <h2><i class="fa fa-usd" aria-hidden="true"></i> Cuotas </h2>
-        <div class=pull-right> <a class="btn btn-success" type="button" >Generar Cuotas</a>
+        <div class=pull-right> <a class="btn btn-success" type="button" data-toggle="modal" data-target="#myModal">Generar Cuotas</a>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <form action="{{ route('generate_cuotas_path', $deporte_id = 'deporte_id') }}" method="POST">
+			{{ csrf_field() }}
+			<select name="deporte_id" class="form-control">
+				<option value="">Seleccione un deporte</option>
+				@foreach($deportes as $deporte)
+					<option value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
+				@endforeach
+			</select>
+		
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success">Generar</button>
+		</form>
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
           <a href="{{ route('create_cuota_path') }}" class="btn btn-success">Cuota Personalizada</a></div>
         <div class="clearfix"></div>
