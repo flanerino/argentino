@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use Argentino\Http\Requests\CreateCuotaRequest;
 use Argentino\Http\Requests\UpdateCuotaRequest;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 use DateTime;
 
 class CuotasController extends Controller
@@ -62,8 +63,21 @@ class CuotasController extends Controller
 
   }
   
-  public function generate_cuotas(Cuota $cuota){
-	  
+  public function generate_cuotas(Request $request){
+	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
+	   $socios = Socio::find($request->deporte_id);
+	   
+		dd($socios);
+		$dt = Carbon::now();
+	  foreach($socios as $socio){
+		  dd($socio);
+		  $cuota = new Cuota;
+		  $cuota->socio_id = $socio->id;
+		  $cuota->monto = $socio->deporte->cuota;
+		  $cuota->mes= $dt->month;
+		  $cuota->anio = $dt->year;
+		  $cuota->save();
+	  }
   }
   public function pago_cuota(Cuota $cuota){
   //if(is_null($cuota->fecha_pago)){

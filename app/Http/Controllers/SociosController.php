@@ -37,7 +37,7 @@ class SociosController extends Controller
         $deportes = Deporte::all();
 
         $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
-
+		
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
                     'deportes' => $deportes,

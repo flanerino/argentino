@@ -51,6 +51,7 @@ Route::name('socios_path')->get('/socios', 'SociosController@show_socios');
 
 
 // Rutas de la parte CUOTAS
+Route::name('generate_cuotas_path')->post('/cuotas-generate','CuotasController@generate_cuotas');
 Route::name('cuotas_path')->get('/cuotas', 'CuotasController@show_cuotas');
 Route::name('create_cuota_path')->get('/cuotas/create', 'CuotasController@create_cuota');
 Route::name('store_cuotas_path')->get('/cuotas/creates', 'CuotasController@store_cuotas');
@@ -59,7 +60,6 @@ Route::name('edit_cuota_path')->get('/cuotas/{cuota}', 'CuotasController@edit_cu
 Route::name('update_cuota_path')->post('/cuotas/{cuota}','CuotasController@update_cuota');
 Route::name('delete_cuota_path')->delete('/cuotas/{cuota}', 'CuotasController@delete_cuota');
 Route::name('pago_cuota_path')->post('/cuotas/{cuota}', 'CuotasController@pago_cuota');
-Route::name('generate_cuotas_path')->post('/cuotas','CuotasController@generate_cuotas');
 
 // 404
 Route::any( '{catchall}', function ( $page ) {
