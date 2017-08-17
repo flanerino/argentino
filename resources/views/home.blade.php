@@ -121,7 +121,7 @@
 </div>
 
 <script>
-  /*function gd(year, month, day) {
+  function gd(year, month, day) {
     return new Date(year, month - 1, day).getTime();
   }
 
@@ -188,6 +188,6 @@
           tickColor: "rgba(51, 51, 51, 0.06)",
         },
         tooltip: false
-      }*/
+      }
 </script>
 @endsection

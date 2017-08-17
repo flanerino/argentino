@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">
-                        Fecha
+                        Fecha <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-3 col-xs-8">
                             <input id="fecha" type="text" name="fecha" class="form-control" data-inputmask="'mask': '99/99/9999'" value="{{ old('fecha') }}">

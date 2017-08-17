@@ -21,9 +21,9 @@ class HomeController extends Controller
         //return dd($egresosMonto->all());
 
         $socios = Socio::count();
-        $ingresos = DB::table('ingresos')->whereNotNull('fecha_cobro')->sum('monto');
-        $gastos = DB::table('gastos')->whereNotNull('fecha_pago')->sum('monto');
+        $ingresos = DB::table('ingresos')->whereNotNull('fecha')->sum('monto');
+        $gastos = DB::table('gastos')->whereNotNull('fecha')->sum('monto');
         $balance = $ingresos - $gastos;
-        return view('home',compact('socios','ingresos','gastos','balance', 'ingresosMonto', 'egresosMonto'));
+        return view('home', compact('socios','ingresos','gastos','balance', 'ingresosMonto', 'egresosMonto'));
     }
 }

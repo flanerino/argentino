@@ -16,6 +16,7 @@ class CreateGastoRequest extends FormRequest
         return [
             'concepto' => 'required',
             'monto' => 'required',
+            'fecha' => 'required'
         ];
     }
 }
