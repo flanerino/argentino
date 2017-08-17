@@ -37,7 +37,7 @@ class SociosController extends Controller
         $deportes = Deporte::all();
 
         $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
-		
+
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
                     'deportes' => $deportes,
@@ -79,6 +79,9 @@ class SociosController extends Controller
         {
             $socio->protector = $request->get('protector');
         }
+
+
+
         $socio->update($request->only(
                 'nro',
                 'nombre',
@@ -92,6 +95,15 @@ class SociosController extends Controller
                 'estado_civil',
                 'deporte_id',
                 'tipo_socios_id'));
+        if (Input::hasFile('imagen'))
+        {
+            $file = Input::file('imagen');
+            $filename = $request->get('dni').'.jpg';
+            Input::file('imagen')->move(public_path('images/socios'), $filename);
+            $socio->imagen = $filename;
+            $socio->save();
+        }
+
 
         session()->flash('msj','Socio Editado');
 

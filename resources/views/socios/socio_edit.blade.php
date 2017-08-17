@@ -30,12 +30,16 @@
                     <div class="profile_img">
                         <!-- end of image cropping -->
                         <label for="logo">Foto</label>
-                        <div class="avatar-view" title="cambiar imagen">
-                        @if($socio->imagen)
-                        <img src="/images/socios/{{$socio->imagen}}">
-                        @endif
+                        <div title="cambiar imagen">
+                          <div>
+                            @if($socio->imagen)
+                              <img src="/images/socios/{{$socio->imagen}}" img id="imagen" width="200" height="200">
+                            @else
+                              <img src="/images/user.png" img id="imagen" width="200" height="200">
+                            @endif
+                          </div>
                         </div>
-                        <input class="btn" style="" id="imagen" name="imagen" type="file">
+                        <input class="btn" style="" id="imagen" name="imagen" type="file" onchange="readURL(this);">
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -154,5 +158,19 @@
         </div>
     </div>
 </form>
+
+<script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#imagen').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
 
 @endsection

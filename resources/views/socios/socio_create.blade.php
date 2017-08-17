@@ -30,8 +30,8 @@
                     <div class="profile_img">
                         <!-- end of image cropping -->
                         <label for="logo">Foto</label>
-                        <div class="avatar-view" title="cambiar imagen"></div>
-                        <input class="btn" style="" id="imagen" name="imagen" type="file">
+                        <div><img id="cambiar_imagen" src="/./images/user.png" width="200" height="200" /> </div>
+                        <input class="btn" style="" id="imagen" name="imagen" type="file" onchange="readURL(this);">
                     </div>
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -151,3 +151,17 @@
     </div>
 </form>
 @endsection
+
+<script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#cambiar_imagen').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
