@@ -122,7 +122,6 @@ class SociosController extends Controller
     public function store_socio(CreateSocioRequest $request)
     {
         $socio = new Socio;
-        $socio->nro = $request->get('nro');
         $socio->nombre = $request->get('nombre');
         $socio->apellido = $request->get('apellido');
         //$socio->fecha_nac = DateHelper::formatToDB($request->get('fecha_nac'));
@@ -144,6 +143,8 @@ class SociosController extends Controller
             $socio->imagen = $filename;
         }
         $socio->save();
+		$socio->nro = $socio->id;
+		$socio->save();
 
         session()->flash('msj', 'Socio Creado');
         return redirect()->route('edit_socio_path',['socio' => $socio->id]);

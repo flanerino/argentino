@@ -65,7 +65,7 @@
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">N&uacutemero de Socio <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input type="text" name="nro" id="nro" required="required" class="form-control col-md-7 col-xs-12" value="{{$socio->nro}}">
+                            <input type="text" name="nro" id="nro" required="required" disabled class="form-control col-md-7 col-xs-12" value="{{$socio->nro}}">
                         </div>
                     </div>
                     <div class="form-group">

@@ -95,7 +95,10 @@ class CuotasController extends Controller
     $ingreso->observacion = $cuota->socio->nro;
 	
     $ingreso->save();
-    session()->flash('msj','Pago Registrado');
+	$ingreso->num_recibo = 10000000+$ingreso->id;
+	$ingreso->save();
+    
+	session()->flash('msj','Pago Registrado');
     return redirect()->route('cuotas_path');
  // }else{
     session()->flash('msj','Esta cuota ya se pagó');

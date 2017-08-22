@@ -27,7 +27,7 @@ class IngresosController extends Controller
   public function storeIngreso(CreateIngresoRequest $request)
   {    
       $ingreso = new Ingreso;
-      $ingreso->num_recibo = $request->num_recibo;
+     // $ingreso->num_recibo = $request->num_recibo;
       $ingreso->concepto = $request->concepto;
       $ingreso->fecha = $request->fecha;
       $ingreso->monto = $request->monto;
@@ -35,10 +35,12 @@ class IngresosController extends Controller
       $ingreso->fecha_cobro = $request->fecha_cobro;
       $ingreso->observacion = $request->observacion;
       $ingreso->save();
+	  $ingreso->num_recibo = 10000000+$ingreso->id;
+	  $ingreso->save();
 
       session()->flash('msj', 'Ingreso Registrado');
 
-      return view('ingresos.ingreso-edit')->with(['ingreso' => $ingreso]);
+      return redirect()->route('edit.ingreso',['ingreso' => $ingreso]);
   }
 
   // Metodo para mostar las lista de los ingresos registrados

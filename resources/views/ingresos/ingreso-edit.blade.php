@@ -42,7 +42,7 @@
                         N° de Recibo
                         </label>
                         <div class="col-md-6 col-sm-6 col-xs-8">
-                            <input id="num_recibo" type="text" name="num_recibo" class="form-control col-md-7 col-xs-12" value="{{$ingreso->num_recibo}}">
+                            <input id="num_recibo" disabled type="text" name="num_recibo" class="form-control col-md-7 col-xs-12" value="{{$ingreso->num_recibo}}">
                         </div>
                     </div>
                     <div class="form-group">
