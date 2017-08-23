@@ -159,4 +159,15 @@ class SociosController extends Controller
       $pdf->render();
       $pdf->stream("Carnet.pdf", array("Attachment"=>0));
   }
+  public function exportar()
+  {
+    $socios = Socio::all();
+    $view = \View::make('exportar',compact('socios'))->render();
+    $pdf = new Dompdf();
+      $pdf->loadHtml($view);
+      $pdf->setPaper('A4', 'portrait');
+      $pdf->render();
+      $pdf->stream("exportar.pdf", array("Attachment"=>0));
+  }
+
 }

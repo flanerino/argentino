@@ -4,9 +4,13 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//Rutas de la parte de PDF
 Route::get('/prueba', 'HomeController@prueba')->name('prueba');
 Route::get('socios/carnet/{socio}', 'SociosController@prueba')->name('carnet');
 
+Route::get('/exportar', 'HomeController@exportar')->name('exportar');
+Route::get('socios/exportar/', 'SociosController@exportar')->name('exportarsocios');
 
 
 // Rutas de la parte GASTOS

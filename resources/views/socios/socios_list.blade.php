@@ -7,6 +7,7 @@
 <div class="x_panel">
     <div class="x_title">
         <h2><i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
+          <div class=pull-right> <a href="{{ route ('exportarsocios' )}}" target="_blank" class="btn btn-primary">Exportar Socios</a></div>
         <div class=pull-right> <a href="{{ route('create_socio_path') }}" class="btn btn-success">Nuevo Socio</a></div>
         <div class="clearfix"></div>
     </div>
