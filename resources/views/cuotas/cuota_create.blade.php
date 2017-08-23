@@ -27,41 +27,24 @@
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Socio <span class="required">*</span></label>
                       <div class="col-md-4 col-sm-6 col-xs-12">
-                          <select id="socio_id" name="socio_id" class="form-control">
-                              <option value="">Seleccione socio</option>
+						@if(!empty ($_GET) )
+                          <select id="socio_id" name="socio_id" disabled class="form-control">
+							<option value="">Seleccione socio</option>
+                              @foreach($socios as $socio)
+                              <option <?if($_GET['socio']==$socio->id) echo 'selected';?> value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
+							  @endforeach
+                          </select>
+						@else
+						  <select id="socio_id" name="socio_id" class="form-control">
+							  <option value="">Seleccione socio</option>
                               @foreach($socios as $socio)
                               <option value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
-                              @endforeach
+							  @endforeach
                           </select>
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="nombre" id="nombre" class="form-control col-md-7 col-xs-12" value="{{old('nombre')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Apellido
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="apellido" id="apellido" class="form-control col-md-7 col-xs-12" value="{{old('apellido')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Telefono
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="telefono" name="telefono" class="form-control col-md-7 col-xs-12" value="{{old('telefono')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio
-                      </label>
-                      <div class="col-md-6 col-sm-9 col-xs-12">
-                          <input id="domicilio" name="domicilio" class="form-control col-md-7 col-xs-12" type="text" value="{{old('domicilio')}}">
-                      </div>
+						@endif
+                              
+						
+					  </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Mes

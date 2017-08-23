@@ -13,6 +13,12 @@
           <li><a href="{{ route('socios_path') }}">Listado Socios </a></li>
         </ul>
       </li>
+	  <li><a><i class="fa fa-usd" aria-hidden="true"></i> Cuotas <span class="fa fa-chevron-down"></span></a>
+        <ul class="nav child_menu">
+          <li><a href="{{ route('create_cuota_path') }}">Ingresar Cuota Personalizada</a></li>
+          <li><a href="{{ route('cuotas_path') }}">Listado Cuotas</a></li>
+        </ul>
+      </li>
       <li><a><i class="fa fa-usd" aria-hidden="true"></i> Gastos <span class="fa fa-chevron-down"></span></a>
         <ul class="nav child_menu">
           <li><a href="{{ route('create.gasto') }}">Ingresar Gasto</a></li>
@@ -29,12 +35,6 @@
         <ul class="nav child_menu">
           <li><a href="{{ route('create.deporte') }}">Ingresar Deporte</a></li>
           <li><a href="{{ route('deportes.lista') }}">Listado Deportes</a></li>
-        </ul>
-      </li>
-	  <li><a><i class="fa fa-usd" aria-hidden="true"></i> Cuotas <span class="fa fa-chevron-down"></span></a>
-        <ul class="nav child_menu">
-          <li><a href="{{ route('create_cuota_path') }}">Ingresar Cuota Personalizada</a></li>
-          <li><a href="{{ route('cuotas_path') }}">Listado Cuotas</a></li>
         </ul>
       </li>
     </ul>
