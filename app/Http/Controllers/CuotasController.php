@@ -86,7 +86,7 @@ class CuotasController extends Controller
     
 	$ingreso = new Ingreso;
   //  $ingreso->num_recibo = $request->num_recibo;
-    $ingreso->concepto = "pago de cuota";
+    $ingreso->concepto = "Pago de cuota. "."Correspondiente al mes ".$cuota->mes."/".$cuota->anio;
     $ingreso->monto = $cuota->monto;
     $ingreso->forma_pago = "Efectivo";
 	$dt2 = Carbon::now()->format('d/m/Y');

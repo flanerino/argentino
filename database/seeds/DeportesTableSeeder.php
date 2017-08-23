@@ -12,7 +12,7 @@ class DeportesTableSeeder extends Seeder
     public function run()
     {
         DB::table('deportes')->insert([
-            'deporte' => 'Bascket',
+            'deporte' => 'Basquet',
             'cuota' => '300',
             'orden' => '1',          
             'id_padre' => '1'

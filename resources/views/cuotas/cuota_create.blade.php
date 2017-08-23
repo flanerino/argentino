@@ -36,34 +36,6 @@
                       </div>
                   </div>
                   <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Nombre
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="nombre" id="nombre" class="form-control col-md-7 col-xs-12" value="{{old('nombre')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Apellido
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" name="apellido" id="apellido" class="form-control col-md-7 col-xs-12" value="{{old('apellido')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12" for="last-name">Telefono
-                      </label>
-                      <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="telefono" name="telefono" class="form-control col-md-7 col-xs-12" value="{{old('telefono')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio
-                      </label>
-                      <div class="col-md-6 col-sm-9 col-xs-12">
-                          <input id="domicilio" name="domicilio" class="form-control col-md-7 col-xs-12" type="text" value="{{old('domicilio')}}">
-                      </div>
-                  </div>
-                  <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Mes
                       </label>
                       <div class="col-md-6 col-sm-9 col-xs-12">
