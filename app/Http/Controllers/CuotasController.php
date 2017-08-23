@@ -37,7 +37,7 @@ class CuotasController extends Controller
               ]);
   }
 
-  public function create_cuota(){
+  public function create_cuota(Socio $socio){
     $socios = Socio::all();
     $cuota = new Cuota;
     $deportes = Deporte::all();

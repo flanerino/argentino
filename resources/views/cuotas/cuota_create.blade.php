@@ -27,13 +27,24 @@
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Socio <span class="required">*</span></label>
                       <div class="col-md-4 col-sm-6 col-xs-12">
-                          <select id="socio_id" name="socio_id" class="form-control">
-                              <option value="">Seleccione socio</option>
+						@if(!empty ($_GET) )
+                          <select id="socio_id" name="socio_id" disabled class="form-control">
+							<option value="">Seleccione socio</option>
+                              @foreach($socios as $socio)
+                              <option <?if($_GET['socio']==$socio->id) echo 'selected';?> value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
+							  @endforeach
+                          </select>
+						@else
+						  <select id="socio_id" name="socio_id" class="form-control">
+							  <option value="">Seleccione socio</option>
                               @foreach($socios as $socio)
                               <option value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
-                              @endforeach
+							  @endforeach
                           </select>
-                      </div>
+						@endif
+                              
+						
+					  </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Mes
