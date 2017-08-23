@@ -60,8 +60,6 @@
             </div>
             <!-- /menu profile quick info -->
 
-            <br />
-
             <!-- Sidebar -->
             @include('partials/sidebar')
 

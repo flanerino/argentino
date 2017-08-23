@@ -69,7 +69,7 @@
                           <select class="form-control" name="forma_pago">
                             <option value="{{ $ingreso->forma_pago or old('forma_pago') }}">{{ $ingreso->forma_pago or old('forma_pago') }}</option>
                             <option value="Efectivo">Efectivo</option>
-                            <option value="Tarjeta">Tarjeta</option>
+                            <option value="Cheque">Cheque</option>
                             <option value="Transaccion Bancaria">Transaccion Bancaria</option>
                           </select>
                         </div>

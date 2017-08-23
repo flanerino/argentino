@@ -20,7 +20,7 @@ class CreateSolicitudesTable extends Migration
             $table->date('fecha_nac')->nullable();
             $table->string('email')->nullable();
             $table->integer('dni')->nullable();
-            $table->integer('telefono')->nullable();
+            $table->string('telefono')->nullable();
             $table->string('domicilio')->nullable();
             $table->string('domicilio_cobro')->nullable();
             $table->integer('estado_civil')->nullable();

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class SolicitudesTableSeeder extends Seeder
 {
@@ -11,109 +12,111 @@ class SolicitudesTableSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create();
+
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio',
-          'apellido' => 'socio',
-          'fecha_nac' => '1980-6-1',
-          'email' => 'socio@gmail.com',
-          'dni' => '39085467',
-          'telefono' => '15534657',
-          'domicilio' => 'Calle 25 N° 1123',
-          'domicilio_cobro' => 'Calle 25 N° 1123',
-          'estado_civil' => '1',
-          'protector' => '1',
-          'deporte_id' => '1',
-          'tipo_socios_id' => '1'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio1',
-          'apellido' => 'socio1',
-          'fecha_nac' => '1990-4-10',
-          'email' => 'socio1@gmail.com',
-          'dni' => '40805333',
-          'telefono' => '15404040',
-          'domicilio' => 'Calle 23 N° 999',
-          'domicilio_cobro' => 'Calle 23 N° 999',
-          'estado_civil' => '2',
-          'protector' => '0',
-          'deporte_id' => '1',
-          'tipo_socios_id' => '1'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio2',
-          'apellido' => 'socio2',
-          'fecha_nac' => '2000-10-20',
-          'email' => 'socio2@gmail.com',
-          'dni' => '41987345',
-          'telefono' => '15303030',
-          'domicilio' => 'Calle 15 N° 432',
-          'domicilio_cobro' => 'Calle 15 N° 432',
-          'estado_civil' => '1',
-          'protector' => '0',
-          'deporte_id' => '1',
-          'tipo_socios_id' => '1'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio3',
-          'apellido' => 'socio3',
-          'fecha_nac' => '1997-3-13',
-          'email' => 'socio3@gmail.com',
-          'dni' => '40000467',
-          'telefono' => '15121345',
-          'domicilio' => 'Calle 1 N° 112',
-          'domicilio_cobro' => 'Calle 1 N° 112',
-          'estado_civil' => '1',
-          'protector' => '1',
-          'deporte_id' => '2',
-          'tipo_socios_id' => '2'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio4',
-          'apellido' => 'socio4',
-          'fecha_nac' => '2000-12-22',
-          'email' => 'socio4@gmail.com',
-          'dni' => '41222333',
-          'telefono' => '15126598',
-          'domicilio' => 'Calle 5 N° 540',
-          'domicilio_cobro' => 'Calle 5 N° 540',
-          'estado_civil' => '2',
-          'protector' => '1',
-          'deporte_id' => '2',
-          'tipo_socios_id' => '2'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio5',
-          'apellido' => 'socio5',
-          'fecha_nac' => '1970-11-28',
-          'email' => 'socio5@gmail.com',
-          'dni' => '38145712',
-          'telefono' => '15445566',
-          'domicilio' => 'Calle 3 N° 666',
-          'domicilio_cobro' => 'Calle 3 N° 666',
-          'estado_civil' => '1',
-          'protector' => '1',
-          'deporte_id' => '2',
-          'tipo_socios_id' => '2'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
 
       DB::table('solicitudes')->insert([
-          'nombre' => 'socio6',
-          'apellido' => 'socio6',
-          'fecha_nac' => '1970-11-28',
-          'email' => 'socio6@gmail.com',
-          'dni' => '38245712',
-          'telefono' => '15465566',
-          'domicilio' => 'Calle 6 N° 333',
-          'domicilio_cobro' => 'Calle 6 N° 333',
-          'estado_civil' => '1',
-          'protector' => '1',
-          'deporte_id' => '2',
-          'tipo_socios_id' => '2'
+          'nombre' => $faker->firstName,
+          'apellido' => $faker->LastName,
+          'fecha_nac' => $faker->date,
+          'email' => $faker->email,
+          'dni' => $faker->ean8,
+          'telefono' => $faker->phoneNumber,
+          'domicilio' => $faker->address,
+          'domicilio_cobro' => $faker->address,
+          'estado_civil' => $faker->numberBetween(1,4),
+          'protector' => $faker->numberBetween(0,1),
+          'deporte_id' => $faker->numberBetween(1,16),
+          'tipo_socios_id' => $faker->numberBetween(0,1)
       ]);
     }
 }
