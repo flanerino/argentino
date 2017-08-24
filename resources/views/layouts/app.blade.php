@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @show
 
-    <title>CAYCA | {{$title}}</title>
+    <title>CAyCA | {{$title}}</title>
 
     @section('styles')
     <link rel="shortcut icon" href="/images/favicon.png">

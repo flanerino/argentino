@@ -8,7 +8,7 @@
         <div class="col-md-12">
             <div class="panel panel-default">
 
-                <div class="panel-heading"><strong>CAYCA</strong></div>
+                <div class="panel-heading"><strong>CAyCA</strong></div>
 
                 <div class="panel-body">
 

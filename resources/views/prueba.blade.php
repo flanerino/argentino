@@ -35,7 +35,11 @@
       -webkit-border-radius: 13px 13px 13px 13px;
       border: 1px none #000000;overflow:hidden;float:left; height:220px;  width:335px ;border:2px solid black;">
       <div style="margin:10px;border: 1px none #000000;float:left; height:120px;  width:120px ;border:2px solid black;">
+        @if($socio->imagen)  
         <img id="imagen" src="./images/socios/{{$socio->imagen}}" width="120" height="120" >
+        @else
+        <img id="imagen" src="./images/sources/user128x128.png" width="120" height="120" >
+        @endif
       </div>
 
     <br><div style="clear:both;float:right;font-family:sans-serif;width: 193px;">

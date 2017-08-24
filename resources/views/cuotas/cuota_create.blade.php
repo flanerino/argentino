@@ -23,28 +23,26 @@
         <div class="x_content">
             @include('cuotas.errors')
             <div class="row">
-              <div class="col-md-9 col-sm-9 col-xs-12">
-                  <div class="form-group">
-                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Socio <span class="required">*</span></label>
-                      <div class="col-md-4 col-sm-6 col-xs-12">
-						@if(!empty ($_GET) )
-                          <select id="socio_id" name="socio_id" disabled class="form-control">
-							<option value="">Seleccione socio</option>
-                              @foreach($socios as $socio)
-                              <option <?if($_GET['socio']==$socio->id) echo 'selected';?> value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
-							  @endforeach
-                          </select>
-						@else
-						  <select id="socio_id" name="socio_id" class="form-control">
-							  <option value="">Seleccione socio</option>
-                              @foreach($socios as $socio)
-                              <option value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
-							  @endforeach
-                          </select>
-						@endif
-                              
-						
-					  </div>
+                <div class="col-md-9 col-sm-9 col-xs-12">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Socio <span class="required">*</span></label>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            @if(!empty ($_GET) )
+                                <select id="socio_id" name="socio_id" disabled class="form-control">
+                                    <option value="">Seleccione socio</option>
+                                    @foreach($socios as $socio)
+                                        <option <?if($_GET['socio']==$socio->id) echo 'selected';?> value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            @else
+                                <select id="socio_id" name="socio_id" class="form-control">
+                                    <option value="">Seleccione socio</option>
+                                    @foreach($socios as $socio)
+                                        <option value="{{$socio->id}}">{{$socio->apellido}} {{$socio->nombre}}</option>
+                                    @endforeach
+                                </select>
+                            @endif
+                        </div>
                   </div>
                   <div class="form-group">
                       <label class="control-label col-md-3 col-sm-3 col-xs-12">Mes

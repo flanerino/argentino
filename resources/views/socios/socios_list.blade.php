@@ -73,10 +73,10 @@
                                 </td>
                                 <td>
 
-                                    <a href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a>
-                                    <a  class="btn btn-success" href="{{ route ('carnet', ['socio' => $socio->id])}}"target="_blank"><i class="fa fa-file-pdf-o"></i></a>
-									<a  class="btn btn-success" href="{{ route('create_cuota_path', ['socio' => $socio->id])}}"target="_blank"><i class="fa fa-usd"></i></a> 
-                                    <a class="btn btn-danger" title="Eliminar" data-toggle="modal" data-target="#delete_register{{$socio->id}}" type="button"><i class="fa fa-trash"></i></a>
+                                    <a title="editar" href="{{ route('edit_socio_path', ['socio' => $socio->id] ) }}" class="btn btn-primary"><i class="fa fa-pencil-square-o fa-1x" aria-hidden="true"></i></a>
+                                    <a  title="carmet" class="btn btn-success" href="{{ route ('carnet', ['socio' => $socio->id])}}"target="_blank"><i class="fa fa-file-pdf-o"></i></a>
+                                    <a  title="crear cuota" class="btn btn-success" href="{{ route('create_cuota_path', ['socio' => $socio->id])}}"target="_blank"><i class="fa fa-usd"></i></a> 
+                                    <a title="eliminar" class="btn btn-danger" title="Eliminar" data-toggle="modal" data-target="#delete_register{{$socio->id}}" type="button"><i class="fa fa-trash"></i></a>
 
                                     <div id="delete_register{{$socio->id}}" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-sm">
