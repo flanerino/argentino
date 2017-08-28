@@ -34,11 +34,12 @@ class CuotasController extends Controller
                   'deportes' => $deportes,
                   'protector' => $protector,
                   'deporte_id' => $deporte_id
+
               ]);
   }
 
   public function create_cuota(Socio $socio){
-    $socios = Socio::all();
+    $socios = Socio::where('activo', 1);
     $cuota = new Cuota;
     $deportes = Deporte::all();
 
@@ -56,24 +57,29 @@ class CuotasController extends Controller
   }
 
   public function edit_cuota(Cuota $cuota){
-    $socios = Socio::all();
+    $socios = Socio::where('activo', 1);
     $deportes = Deporte::all();
 
     return view ('cuotas.cuota_edit')->with(['cuota' => $cuota, 'deportes' => $deportes,'socios' => $socios]);
 
   }
-  
+
   public function generate_cuotas(Request $request){
 	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
-	   $socios = Socio::find($request->deporte_id);
-	   
+     if(is_null($request->deporte_id)){
+      $socios = Socio::where('protector', 1, 'activo', 1); //cobrar protectores
+     }else{
+       $socios = Socio::find($request->deporte_id); //cobrar deportistas
+    }
+
+
 		dd($socios);
 		$dt = Carbon::now();
 	  foreach($socios as $socio){
 		  dd($socio);
 		  $cuota = new Cuota;
 		  $cuota->socio_id = $socio->id;
-		  $cuota->monto = $socio->deporte->cuota;
+		  $cuota->monto = 150+$socio->deporte->cuota;
 		  $cuota->mes= $dt->month;
 		  $cuota->anio = $dt->year;
 		  $cuota->save();
@@ -83,7 +89,7 @@ class CuotasController extends Controller
   //if(is_null($cuota->fecha_pago)){
     $dt = Carbon::now();
     Cuota::where('id', $cuota->id)->update(array('fecha_pago' => $dt));
-    
+
 	$ingreso = new Ingreso;
   //  $ingreso->num_recibo = $request->num_recibo;
     $ingreso->concepto = "Pago de cuota. "."Correspondiente al mes ".$cuota->mes."/".$cuota->anio;
@@ -93,11 +99,11 @@ class CuotasController extends Controller
     $ingreso->fecha = $dt2;
    // $ingreso->fecha_cobro = $cuota->fecha_pago;
     $ingreso->observacion = $cuota->socio->nro;
-	
+
     $ingreso->save();
 	$ingreso->num_recibo = 10000000+$ingreso->id;
 	$ingreso->save();
-    
+
 	session()->flash('msj','Pago Registrado');
     return redirect()->route('cuotas_path');
  // }else{
@@ -127,21 +133,4 @@ class CuotasController extends Controller
     return redirect()->route('cuotas_path');
   }
 
-  public function store_cuotas(CreateCuotaRequest $request, Deporte $deporte){
-    if(is_null($deporte)){
-      $socios = Socio::all();
-    }else{
-      $socios = Socio::where('deporte_id', $deporte);
-    }
-    foreach($socios as $socio){
-      $cuota = new Cuota;
-      $cuota->socio_id = $socio->id;
-      $cuota->monto = $socio->deporte->cuota;
-      $cuota->mes= "3";
-      $cuota->anio = "2017";
-      $cuota->save();
-    }
-    session()->flash('msj', 'cuotas creadas');
-    return redirect()->route('cuotas_path');
-  }
 }

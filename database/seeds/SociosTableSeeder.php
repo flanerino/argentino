@@ -12,7 +12,7 @@ class SociosTableSeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();        
+        $faker = Faker::create();
       DB::table('socios')->insert([
           'nro' => '1',
           'nombre' => $faker->firstName,
@@ -26,6 +26,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -41,7 +42,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
-
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -57,6 +58,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -72,6 +74,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -87,6 +90,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -102,6 +106,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -117,6 +122,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -132,6 +138,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -147,6 +154,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 1
       ]);
 
       DB::table('socios')->insert([
@@ -162,6 +170,7 @@ class SociosTableSeeder extends Seeder
           'estado_civil' => $faker->numberBetween(1,4),
           'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
+          'activo' => 0
       ]);
     }
 }

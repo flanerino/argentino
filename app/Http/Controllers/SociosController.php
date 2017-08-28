@@ -36,15 +36,48 @@ class SociosController extends Controller
 
         $deportes = Deporte::all();
 
-        $socios = Socio::filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
+        $socios = Socio::where('activo', 1)->filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
 
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
                     'deportes' => $deportes,
                     'protector' => $protector,
-                    'deporte_id' => $deporte_id
+                    'deporte_id' => $deporte_id,
+                    'title' => 'Socios'
                 ]);
     }
+    //lista de socios historicos
+    public function show_socios_historicos(){
+      $protector=Input::get('protector');
+      $deporte_id=Input::get('deporte_id');
+
+      $deportes = Deporte::all();
+
+      $socios = Socio::where('activo', 0)->filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
+
+      return view('socios/historicos/socios_list')->with(
+              [   'socios' => $socios,
+                  'deportes' => $deportes,
+                  'protector' => $protector,
+                  'deporte_id' => $deporte_id,
+                  'title' => 'Socios Hist&oacutericos'
+              ]);
+    }
+
+    public function view_socio_historico(socio $socio)
+    {
+        $deportes = Deporte::all();
+        return view ('socios.historicos.socio_edit')->with(['socio' => $socio,  'deportes' => $deportes]);
+    }
+
+    public function restore_socio(socio $socio)
+    {
+        $socio->activo = 1;
+        $socio->save();
+        session()->flash('msj','Socio Restaurado');
+        return redirect()->route('socios_historicos_path');
+    }
+
     //Mostrar Socio individual
     public function show_socio(Socio $socio)
     {
@@ -55,7 +88,8 @@ class SociosController extends Controller
 
     public function delete_socio(socio $socio)
     {
-        $socio->delete();
+        $socio->activo = 0;
+        $socio->save();
         session()->flash('msj','Socio eliminado');
         return redirect()->route('socios_path');
     }
@@ -134,6 +168,7 @@ class SociosController extends Controller
         $socio->estado_civil = $request->get('estado_civil');
         $socio->protector = $request->get('protector');
         $socio->deporte_id = $request->get('deporte_id');
+        $socio->activo = 1;
 
         if (Input::hasFile('imagen'))
         {
@@ -161,7 +196,7 @@ class SociosController extends Controller
   }
   public function exportar()
   {
-    $socios = Socio::all();
+    $socios = Socio::where('activo', 1)->get();
     $view = \View::make('exportar',compact('socios'))->render();
     $pdf = new Dompdf();
       $pdf->loadHtml($view);

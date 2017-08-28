@@ -11,6 +11,7 @@
         <ul class="nav child_menu">
           <li><a href="{{ route('create_socio_path') }}">Ingresar Socio </a></li>
           <li><a href="{{ route('socios_path') }}">Listado Socios </a></li>
+          <li><a href="{{ route('socios_historicos_path') }}">Listado Socios Hist&oacute;ricos </a></li>
         </ul>
       </li>
 	  <li><a><i class="fa fa-usd" aria-hidden="true"></i> Cuotas <span class="fa fa-chevron-down"></span></a>

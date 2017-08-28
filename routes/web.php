@@ -52,6 +52,11 @@ Route::name('create_socio_path')->get('/socios/create', 'SociosController@create
 Route::name('store_socio_path')->post('/socios', 'SociosController@store_socio');
 //Route::name('socio_path')->get('/socios/{socio}', 'SociosController@show_socio');
 Route::name('socios_path')->get('/socios', 'SociosController@show_socios');
+// SOCIOS HISTORICOS
+Route::name('socios_historicos_path')->get('/socios/historicos', 'SociosController@show_socios_historicos');
+Route::name('restore_socio_path')->post('/socios/historicos/{socio}','SociosController@restore_socio');
+Route::name('socios_historicos_view_path')->get('/socios/historicos/{socio}','SociosController@view_socio_historico');
+
 
 
 // Rutas de la parte CUOTAS

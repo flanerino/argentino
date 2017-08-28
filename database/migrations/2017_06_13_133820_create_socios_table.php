@@ -29,6 +29,7 @@ class CreateSociosTable extends Migration
             $table->boolean('protector');
             $table->integer('deporte_id')->nullable();
             $table->string('imagen')->nullable();
+            $table->boolean('activo');
             $table->timestamps();
         });
     }
