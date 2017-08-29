@@ -67,16 +67,14 @@ class CuotasController extends Controller
   public function generate_cuotas(Request $request){
 	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
      if(is_null($request->deporte_id)){
-      $socios = Socio::where('protector', 1, 'activo', 1); //cobrar protectores
+      $socios = Socio::where('activo', 1)->where('protector', 1)->get(); //cobrar protectores
+	  
      }else{
-       $socios = Socio::find($request->deporte_id); //cobrar deportistas
+       $socios = Socio::where('deporte_id',$request->deporte_id)->get(); //cobrar deportistas
     }
 
-
-		dd($socios);
 		$dt = Carbon::now();
 	  foreach($socios as $socio){
-		  dd($socio);
 		  $cuota = new Cuota;
 		  $cuota->socio_id = $socio->id;
 		  $cuota->monto = 150+$socio->deporte->cuota;
@@ -84,6 +82,8 @@ class CuotasController extends Controller
 		  $cuota->anio = $dt->year;
 		  $cuota->save();
 	  }
+	  
+	  return redirect()->route('cuotas_path');
   }
   public function pago_cuota(Cuota $cuota){
   //if(is_null($cuota->fecha_pago)){
