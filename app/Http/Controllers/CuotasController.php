@@ -68,7 +68,7 @@ class CuotasController extends Controller
 	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
      if(is_null($request->deporte_id)){
       $socios = Socio::where('activo', 1)->where('protector', 1)->get(); //cobrar protectores
-	  
+
      }else{
        $socios = Socio::where('deporte_id',$request->deporte_id)->get(); //cobrar deportistas
     }
@@ -77,12 +77,17 @@ class CuotasController extends Controller
 	  foreach($socios as $socio){
 		  $cuota = new Cuota;
 		  $cuota->socio_id = $socio->id;
-		  $cuota->monto = 150+$socio->deporte->cuota;
+      if($socio->protector == 1){
+      $cuota->monto = 150;
+    }else{
+      $cuota->monto = 150+$socio->deporte->cuota;
+    }
+
 		  $cuota->mes= $dt->month;
 		  $cuota->anio = $dt->year;
 		  $cuota->save();
 	  }
-	  
+
 	  return redirect()->route('cuotas_path');
   }
   public function pago_cuota(Cuota $cuota){

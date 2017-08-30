@@ -19,10 +19,10 @@
                 <h4 class="modal-title">Modal Header</h4>
               </div>
                   <form action="{{ route('generate_cuotas_path') }}" method="POST">
-                        <div class="modal-body">    
+                        <div class="modal-body">
                             {{ csrf_field() }}
                             <select name="deporte_id" class="form-control">
-                                <option value="">Seleccione un deporte</option>
+                                <option value="">Protector</option>
                                 @foreach($deportes as $deporte)
                                     <option value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
                                 @endforeach
@@ -40,7 +40,7 @@
         <a href="{{ route('create_cuota_path') }}" class="btn btn-success">Cuota Personalizada</a></div>
         <div class="clearfix"></div>
     </div>
-    
+
     @include('cuotas.msjs')
     <div class="x_content" style="display: block;">
         <div id="datatable_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
