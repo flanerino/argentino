@@ -20,7 +20,7 @@ class CuotasController extends Controller
   {
       $this->middleware('auth');
   }
-
+//MOSTRAR CUOTAS
   public function show_cuotas(){
       $apellido=Input::get('apellido');
       $protector=Input::get('protector');
@@ -37,7 +37,7 @@ class CuotasController extends Controller
 
               ]);
   }
-
+//Crear Cuotas (vista)
   public function create_cuota(Socio $socio){
     $socios = Socio::where('activo', 1);
     $cuota = new Cuota;
@@ -46,16 +46,7 @@ class CuotasController extends Controller
     return view ('cuotas.cuota_create')->with(['cuota' => $cuota, 'deportes' => $deportes,'socios' => $socios]);
     }
 
-  public function update_cuota(Cuota $cuota, UpdateCuotaRequest $request){
-    $cuota->update($request->only(
-            'mes',
-            'anio',
-            'monto'));
-    session()->flash('msj','Cuota Editada');
-
-    return redirect()->route('edit_cuota_path', ['cuota' => $cuota->id] );
-  }
-
+//Editar Cuotas (vista)
   public function edit_cuota(Cuota $cuota){
     $socios = Socio::where('activo', 1);
     $deportes = Deporte::all();
@@ -63,9 +54,22 @@ class CuotasController extends Controller
     return view ('cuotas.cuota_edit')->with(['cuota' => $cuota, 'deportes' => $deportes,'socios' => $socios]);
 
   }
+  //Actualizar Cuota
+    public function update_cuota(Cuota $cuota, UpdateCuotaRequest $request){
+      $cuota->update($request->only(
+              'mes',
+              'anio',
+              'monto'));
+      session()->flash('msj','Cuota Editada');
 
+      return redirect()->route('edit_cuota_path', ['cuota' => $cuota->id] );
+    }
+
+  //Generar Cuotas
   public function generate_cuotas(Request $request){
 	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
+     $protector_monto = Deporte::where('id',1)->get();
+  //   dd($protector_monto);
      if(is_null($request->deporte_id)){
       $socios = Socio::where('activo', 1)->where('protector', 1)->get(); //cobrar protectores
 
@@ -90,6 +94,8 @@ class CuotasController extends Controller
 
 	  return redirect()->route('cuotas_path');
   }
+
+  //Pago de Cuotas
   public function pago_cuota(Cuota $cuota){
   //if(is_null($cuota->fecha_pago)){
     $dt = Carbon::now();
@@ -116,11 +122,15 @@ class CuotasController extends Controller
     return redirect()->route('cuotas_path');
   //}
   }
+
+  //Borrar Cuota
   public function delete_cuota(Cuota $cuota){
     $cuota->delete();
     session()->flash('msj','Cuota eliminada');
     return redirect()->route('cuotas_path');
   }
+
+  //Guardar Cuota
   public function store_cuota(CreateCuotaRequest $request){
     $cuota = new Cuota;
 

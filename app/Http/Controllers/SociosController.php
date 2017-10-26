@@ -37,7 +37,7 @@ class SociosController extends Controller
         $deportes = Deporte::all();
 
         $socios = Socio::where('activo', 1)->filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
-		
+
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
                     'deportes' => $deportes,
@@ -169,6 +169,14 @@ class SociosController extends Controller
         $socio->protector = $request->get('protector');
         $socio->deporte_id = $request->get('deporte_id');
         $socio->activo = 1;
+
+        if($socio->fecha_nac = 0){
+          $socio->fecha_nac = null;
+        }
+
+        if($socio->protector == 1){
+          $socio->deporte_id=NULL;
+        }
 
         if (Input::hasFile('imagen'))
         {
