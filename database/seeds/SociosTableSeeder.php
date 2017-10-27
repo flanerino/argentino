@@ -24,7 +24,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -40,7 +39,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -56,7 +54,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -72,7 +69,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -88,7 +84,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -104,7 +99,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -120,7 +114,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -136,7 +129,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -152,7 +144,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 1
       ]);
@@ -168,7 +159,6 @@ class SociosTableSeeder extends Seeder
           'domicilio' => $faker->address,
           'domicilio_cobro' => $faker->address,
           'estado_civil' => $faker->numberBetween(1,4),
-          'protector' => $faker->numberBetween(0,1),
           'deporte_id' => $faker->numberBetween(1,16),
           'activo' => 0
       ]);

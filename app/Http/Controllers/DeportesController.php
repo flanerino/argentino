@@ -16,7 +16,7 @@ class DeportesController extends Controller
 
     public function showListaDeportes()
     {
-        $deportes = deporte::orderBy('id', 'desc')->paginate(10);
+        $deportes = deporte::orderBy('id', 'asc')->paginate(10);
 
         return view('deportes.deportes-lista')->with([
             'deportes' => $deportes
@@ -34,15 +34,15 @@ class DeportesController extends Controller
         $deporte->deporte = $request->deporte;
         $deporte->cuota = $request->cuota;
         $deporte->id_padre = $request->id_padre;
-            
+
         $deporte->save();
 
         if($request->id_padre)
         {
-            $deportePadre = Deporte::find($request->id_padre);            
-            $deporte->orden=$deportePadre->orden.'->'.$deporte->id;        
-        }        
-        
+            $deportePadre = Deporte::find($request->id_padre);
+            $deporte->orden=$deportePadre->orden.'->'.$deporte->id;
+        }
+
         session()->flash('msj', 'Deporte Generado');
 
         return redirect()->route('deportes.lista');
@@ -58,7 +58,7 @@ class DeportesController extends Controller
         $deporte->update(
             $request->only('deporte', 'cuota')
         );
-        
+
         session()->flash('msj', 'Deporte Actualizado');
 
         return redirect()->route('deportes.lista', ['deporte' => $deporte->id]);

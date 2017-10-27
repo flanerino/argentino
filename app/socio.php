@@ -46,18 +46,9 @@ class Socio extends Model
         $this->attributes['fecha_nac'] = DateHelper::formatToDB($value);
     }
 
-    public function scopeFilter($query, $protector,$deporte_id)
+    public function scopeFilter($query,$deporte_id)
     {
-        if ($protector)
-        {
-            if($protector=-1)
-                $protector=0;
 
-            $query->where(function ($query) use ($protector)
-            {
-                $query->where('protector', '=', $protector);
-            });
-        }
         if ($deporte_id)
         {
             $query->where(function ($query) use ($deporte_id)
@@ -66,5 +57,5 @@ class Socio extends Model
             });
         }
     }
-	
+
 }

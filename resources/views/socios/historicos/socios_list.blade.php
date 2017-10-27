@@ -18,14 +18,6 @@
                         <div class="x_content">
                             <form class="form-inline" action="/socios" method="GET">
                                 <div class="form-group">
-                                    <label for="ex3">Tipo</label>
-                                    <select id="protector" name="protector" class="form-control">
-                                        <option value="">Seleccione tipo</option>
-                                        <option <?if($protector==-1) echo 'selected';?> value="-1">Deportista/a</option>
-                                        <option <?if($protector==1) echo 'selected';?> value="1">Protector/a</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <select name="deporte_id" class="form-control">
                                         <option value="">Seleccione un deporte</option>
                                         @foreach($deportes as $deporte)
@@ -63,16 +55,12 @@
                                 <td>{{$socio->nombre}}</td>
                                 <td>{{$socio->telefono}}</td>
                                 <td>
-                                    @if($socio->protector)
-                                        <b>Protector</b>
-                                    @else
-                                        <b> Deportista({{$socio->deporte->deporte}})</b>
-                                    @endif
+                                <b> Deportista({{$socio->deporte->deporte}})</b>
                                 </td>
                                 <td>
 
                                     <a title="editar" href="{{ route('socios_historicos_view_path', ['socio' => $socio->id] ) }}" class="btn btn-primary"><i class="fa fa-book" aria-hidden="true"></i></a>
-                                    <a title="eliminar" class="btn btn-success" title="Restaurar" data-toggle="modal" data-target="#restore_register{{$socio->id}}" type="button"><i class="fa fa-arrow-up"></i></a>
+                                    <a title="restaurar" class="btn btn-success" title="Restaurar" data-toggle="modal" data-target="#restore_register{{$socio->id}}" type="button"><i class="fa fa-arrow-up"></i></a>
 
                                     <div id="restore_register{{$socio->id}}" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-sm">

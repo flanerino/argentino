@@ -23,7 +23,6 @@ class CuotasController extends Controller
 //MOSTRAR CUOTAS
   public function show_cuotas(){
       $apellido=Input::get('apellido');
-      $protector=Input::get('protector');
       $deporte_id=Input::get('deporte_id');
       $deportes = Deporte::all();
       $cuotas = Cuota::with('socio')->orderBy('id', 'desc')->paginate(10);
@@ -32,7 +31,6 @@ class CuotasController extends Controller
       return view('cuotas.list')->with(
               [   'cuotas' => $cuotas,
                   'deportes' => $deportes,
-                  'protector' => $protector,
                   'deporte_id' => $deporte_id
 
               ]);
@@ -68,23 +66,23 @@ class CuotasController extends Controller
   //Generar Cuotas
   public function generate_cuotas(Request $request){
 	   // $socios = DB::table('socios')->where('deporte_id', '=', $request->deporte_id)->get();
-     $protector_monto = Deporte::where('id',1)->get();
-  //   dd($protector_monto);
-     if(is_null($request->deporte_id)){
-      $socios = Socio::where('activo', 1)->where('protector', 1)->get(); //cobrar protectores
+     $protectores = Deporte::where('id',1)->get();
+     foreach($protectores as $protector){
+       $protector_monto = $protector->cuota;
+     }
 
-     }else{
+     
+
        $socios = Socio::where('deporte_id',$request->deporte_id)->get(); //cobrar deportistas
-    }
 
 		$dt = Carbon::now();
 	  foreach($socios as $socio){
 		  $cuota = new Cuota;
 		  $cuota->socio_id = $socio->id;
-      if($socio->protector == 1){
-      $cuota->monto = 150;
+      if($socio->deporte->id == 1){
+      $cuota->monto = $protector_monto;
     }else{
-      $cuota->monto = 150+$socio->deporte->cuota;
+      $cuota->monto = $protector_monto + $socio->deporte->cuota;
     }
 
 		  $cuota->mes= $dt->month;
@@ -97,7 +95,7 @@ class CuotasController extends Controller
 
   //Pago de Cuotas
   public function pago_cuota(Cuota $cuota){
-  //if(is_null($cuota->fecha_pago)){
+  if(is_null($cuota->fecha_pago)){
     $dt = Carbon::now();
     Cuota::where('id', $cuota->id)->update(array('fecha_pago' => $dt));
 
@@ -117,10 +115,10 @@ class CuotasController extends Controller
 
 	session()->flash('msj','Pago Registrado');
     return redirect()->route('cuotas_path');
- // }else{
+  }else{
     session()->flash('msj','Esta cuota ya se pagó');
     return redirect()->route('cuotas_path');
-  //}
+    }
   }
 
   //Borrar Cuota

@@ -37,16 +37,9 @@
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo de Socio <span class="required">*</span></label>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <select id="protector" name="protector" class="form-control">
-                                <option value="">Seleccione tipo</option>
-                                <option <?if(old('protector')==0) echo 'selected';?> value="0">Deportista/a</option>
-                                <option <?if(old('protector')==1) echo 'selected';?> value="1">Protector/a</option>
-                            </select>
-                        </div>
                         <div class="col-md-5 col-sm-6 col-xs-12">
                             <select name="deporte_id" class="form-control">
-                                <option value="">Seleccione un deporte</option>
+                                <option value="">Seleccione Tipo de Socio</option>
                                 @foreach($deportes as $deporte)
                                     <option value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
                                 @endforeach
@@ -100,7 +93,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4 col-sm-4 col-xs-12">Tel&eacutefono</span>
+                        <label class="control-label col-md-4 col-sm-4 col-xs-12">Tel&eacute;fono</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <input id="telefono" name="telefono" class="form-control col-md-7 col-xs-12" type="text" value="{{old('telefono')}}">

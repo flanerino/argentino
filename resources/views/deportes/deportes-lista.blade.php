@@ -45,10 +45,13 @@
 
         @foreach ($deportes as $deporte)
           <tr role="row" class="odd">
-
-            <td style="text-align: center;">{{ $deporte->deporte }}</td>
-            <td style="text-align: center;">${{ $deporte->cuota }}</td>
-
+            @if($deporte->id == 1)
+              <td style="text-align: center;"><h4><b> {{ $deporte->deporte }} </b></h4></td>
+              <td style="text-align: center;"><h4><b> ${{ $deporte->cuota }} </b></h4></td>
+            @else
+              <td style="text-align: center;">{{ $deporte->deporte }}</td>
+              <td style="text-align: center;">${{ $deporte->cuota }}</td>
+            @endif
             <!-- boton para editar entrada -->
             <td class="text-center">
               <a class="btn btn-primary" href="{{ route('edit.deporte', ['deporte' => $deporte->id]) }}">
@@ -63,10 +66,12 @@
   							{{ method_field('DELETE') }}
 
                 <!-- Button trigger modal -->
+                @if($deporte->id == 1)
+                @else
                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeleteDeporte{{$deporte->id}}">
                   <i type="button" class="fa fa-times-circle" aria-hidden="true"></i>
                 </button>
-
+                @endif
                 <!-- Modal -->
                 <div class="modal fade" id="modalDeleteDeporte{{$deporte->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">

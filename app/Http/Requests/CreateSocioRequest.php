@@ -26,8 +26,7 @@ class CreateSocioRequest extends FormRequest
         return [
             'nombre'=> 'required',
             'apellido' => 'required',
-    //        'protector' => 'required_without:deporte_id',
-            'deporte_id' => 'required_if:protector,0'
+            'deporte_id' => 'required'
         ];
     }
 }

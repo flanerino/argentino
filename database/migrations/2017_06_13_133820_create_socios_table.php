@@ -26,7 +26,6 @@ class CreateSociosTable extends Migration
             $table->string('domicilio')->nullable();
             $table->string('domicilio_cobro')->nullable();
             $table->integer('estado_civil')->nullable();
-            $table->boolean('protector');
             $table->integer('deporte_id')->nullable();
             $table->string('imagen')->nullable();
             $table->boolean('activo');

@@ -19,17 +19,14 @@
                             <form class="form-inline" action="/socios" method="GET">
                                 <div class="form-group">
                                     <label for="ex3">Tipo</label>
-                                    <select id="protector" name="protector" class="form-control">
-                                        <option value="">Seleccione tipo</option>
-                                        <option <?if($protector==-1) echo 'selected';?> value="-1">Deportista/a</option>
-                                        <option <?if($protector==1) echo 'selected';?> value="1">Protector/a</option>
-                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <select name="deporte_id" class="form-control">
                                         <option value="">Seleccione un deporte</option>
                                         @foreach($deportes as $deporte)
+
                                             <option <?if($deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
+
                                         @endforeach
                                     </select>
                                 </div>
@@ -63,11 +60,11 @@
                                 <td>{{$socio->nombre}}</td>
                                 <td>{{$socio->telefono}}</td>
                                 <td>
-                                    @if($socio->protector)
-                                        <b>Protector</b>
-                                    @else
-                                        <b> Deportista({{$socio->deporte->deporte}})</b>
-                                    @endif
+                                @if($socio->deporte->id == 1)
+                                  <b> Protector </b>
+                                @else
+                                  <b> Deportista({{$socio->deporte->deporte}})</b>
+                                @endif
                                 </td>
                                 <td>
 

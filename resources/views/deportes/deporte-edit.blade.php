@@ -28,7 +28,11 @@
             Deporte <span class="required">*</span>
           </label>
           <div class="col-md-2 col-sm-2 col-xs-8">
+            @if($deporte->id == 1)
+            <input required type="text" name="deporte" disabled class="form-control col-md-7 col-xs-12" value="{{ $deporte->deporte  }}">
+            @else
             <input required type="text" name="deporte" class="form-control col-md-7 col-xs-12" value="{{ $deporte->deporte  }}">
+            @endif
           </div>
         </div>
 

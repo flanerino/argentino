@@ -31,34 +31,30 @@ class SociosController extends Controller
      //Mostrar lista de socios
     public function show_socios()
     {
-        $protector=Input::get('protector');
         $deporte_id=Input::get('deporte_id');
 
         $deportes = Deporte::all();
 
-        $socios = Socio::where('activo', 1)->filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
+        $socios = Socio::where('activo', 1)->filter($deporte_id)->orderBy('id', 'asc')->get();
 
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
                     'deportes' => $deportes,
-                    'protector' => $protector,
                     'deporte_id' => $deporte_id,
                     'title' => 'Socios'
                 ]);
     }
     //lista de socios historicos
     public function show_socios_historicos(){
-      $protector=Input::get('protector');
       $deporte_id=Input::get('deporte_id');
 
       $deportes = Deporte::all();
 
-      $socios = Socio::where('activo', 0)->filter($protector,$deporte_id)->orderBy('id', 'asc')->get();
+      $socios = Socio::where('activo', 0)->filter($deporte_id)->orderBy('id', 'asc')->get();
 
       return view('socios/historicos/socios_list')->with(
               [   'socios' => $socios,
                   'deportes' => $deportes,
-                  'protector' => $protector,
                   'deporte_id' => $deporte_id,
                   'title' => 'Socios Hist&oacutericos'
               ]);
@@ -105,17 +101,6 @@ class SociosController extends Controller
     //Actualización de Socio en la DB
     public function update_socio(Socio $socio, UpdateSocioRequest $request)
     {
-        if(is_null($request->get('protector')))
-        {
-            $socio->protector = 0;
-        }
-        else
-        {
-            $socio->protector = $request->get('protector');
-        }
-
-
-
         $socio->update($request->only(
                 'nro',
                 'nombre',
@@ -166,7 +151,6 @@ class SociosController extends Controller
         $socio->domicilio = $request->get('domicilio');
         $socio->domicilio_cobro = $request->get('domicilio_cobro');
         $socio->estado_civil = $request->get('estado_civil');
-        $socio->protector = $request->get('protector');
         $socio->deporte_id = $request->get('deporte_id');
         $socio->activo = 1;
 
@@ -174,9 +158,6 @@ class SociosController extends Controller
           $socio->fecha_nac = null;
         }
 
-        if($socio->protector == 1){
-          $socio->deporte_id=NULL;
-        }
 
         if (Input::hasFile('imagen'))
         {

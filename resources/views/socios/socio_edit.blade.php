@@ -45,13 +45,6 @@
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo de Socio <span class="required">*</span></label>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <select id="protector" name="protector" class="form-control">
-                                <option value="">Seleccione tipo</option>
-                                <option <?if($socio->protector==0) echo 'selected';?> value="0">Deportista/a</option>
-                                <option <?if($socio->protector==1) echo 'selected';?> value="1">Protector/a</option>
-                            </select>
-                        </div>
                         <div class="col-md-5 col-sm-6 col-xs-12">
                             <select name="deporte_id" class="form-control">
                                 <option value="">Seleccione un deporte</option>
@@ -62,7 +55,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">N&uacutemero de Socio <span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">N&uacute;mero de Socio <span class="required">*</span>
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
                             <input type="text" name="nro" id="nro" required="required" disabled class="form-control col-md-7 col-xs-12" value="{{$socio->nro}}">
@@ -98,7 +91,7 @@
                         <label class="control-label col-md-4 col-sm-4 col-xs-12">Nacimiento</label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <div id="fecha_nac" class="btn-group" data-toggle="buttons">
-                                <input id="fecha_nac" required="required" data-inputmask="'mask': '99/99/9999'" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" value="{{$socio->fecha_nac}}">
+                                <input id="fecha_nac" data-inputmask="'mask': '99/99/9999'" class="form-control col-md-7 col-xs-12" type="text" name="fecha_nac" value="{{$socio->fecha_nac}}">
                             </div>
                         </div>
                     </div>
@@ -115,7 +108,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-4 col-sm-4 col-xs-12">Tel&eacutefono</span>
+                        <label class="control-label col-md-4 col-sm-4 col-xs-12">Tel&eacute;fono</span>
                         </label>
                         <div class="col-md-8 col-sm-8 col-xs-12">
                             <input id="telefono" name="telefono" class="form-control col-md-7 col-xs-12" type="text" value="{{$socio->telefono}}">
@@ -124,17 +117,17 @@
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio
                         </label>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <input id="domicilio" name="domicilio" class="form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->domicilio}}">
+                            <input id="domicilio" name="domicilio" class="form-control col-md-7 col-xs-12" type="text" value="{{$socio->domicilio}}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro<span class="required">*</span>
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Domicilio Cobro
                         </label>
                         <div class="col-md-9 col-sm-6 col-xs-12">
-                            <input id="domicilio_cobro" name="domicilio_cobro" class="form-control col-md-7 col-xs-12" required="required" type="text" value="{{$socio->domicilio_cobro}}">
+                            <input id="domicilio_cobro" name="domicilio_cobro" class="form-control col-md-7 col-xs-12" type="text" value="{{$socio->domicilio_cobro}}">
                         </div>
                     </div>
                     <div class="form-group">

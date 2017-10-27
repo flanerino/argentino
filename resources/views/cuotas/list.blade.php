@@ -22,7 +22,7 @@
                         <div class="modal-body">
                             {{ csrf_field() }}
                             <select name="deporte_id" class="form-control">
-                                <option value="">Protector</option>
+                                <option value="">Seleccione Tipo de Socio</option>
                                 @foreach($deportes as $deporte)
                                     <option value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
                                 @endforeach
@@ -95,7 +95,7 @@
                                 <td>{{$cuota->socio->apellido}}</td>
                                 <td>{{$cuota->socio->nombre}}</td>
                                 <td>
-                                    @if($cuota->socio->protector)
+                                    @if($cuota->socio->deporte->id == 1)
                                         <b>Protector</b>
                                     @else
                                         <b> Deportista({{$cuota->socio->deporte->deporte}})</b>
