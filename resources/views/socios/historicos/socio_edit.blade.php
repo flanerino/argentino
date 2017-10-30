@@ -44,22 +44,12 @@
                 </div>
                 <div class="col-md-9 col-sm-9 col-xs-12">
                     <div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Tipo de Socio <span class="required">*</span></label>
-                        <div class="col-md-4 col-sm-6 col-xs-12">
-                            <select id="protector" name="protector" disabled class="form-control">
-                                <option value="">Seleccione tipo</option>
-                                <option <?if($socio->protector==0) echo 'selected';?> value="0">Deportista/a</option>
-                                <option <?if($socio->protector==1) echo 'selected';?> value="1">Protector/a</option>
-                            </select>
-                        </div>
-                        <div class="col-md-5 col-sm-6 col-xs-12">
-                            <select name="deporte_id" disabled class="form-control">
-                                <option value="">Seleccione un deporte</option>
-                                @foreach($deportes as $deporte)
-                                    <option <?if($socio->deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
-                                @endforeach
-                            </select>
-                        </div>
+                        <select name="deporte_id" disabled class="form-control">
+                            <option value="">Seleccione un deporte</option>
+                            @foreach($deportes as $deporte)
+                                <option <?if($socio->deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">N&uacutemero de Socio <span class="required">*</span>

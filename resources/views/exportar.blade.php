@@ -31,7 +31,7 @@
                             <td>{{$socio->nombre}}</td>
                             <td>{{$socio->telefono}}</td>
                             <td>
-                                @if($socio->protector)
+                                @if($socio->deporte->id == 1)
                                     <b>Protector</b>
                                 @else
                                     <b> Deportista({{$socio->deporte->deporte}})</b>
