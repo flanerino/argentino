@@ -29,6 +29,7 @@
     <link href="/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />    
     <!-- Custom Theme Style -->
     <link href="/css/custom.css" rel="stylesheet">
     @show
@@ -138,13 +139,14 @@
     <!-- bootstrap-daterangepicker -->
     <script src="/vendors/moment/min/moment.min.js"></script>
     <script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-    <!-- Custom Theme Scripts -->
-    <script src="/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
     <!-- Input-Mask -->
     <script src="/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="/js/custom.js"></script>
     @show
 </body>
 

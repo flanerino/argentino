@@ -1,9 +1,6 @@
 @extends ('layouts.app')
 
 @section ('content')
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-  
 <div class="x_panel">
     <div class="x_title">
         <h2><i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
