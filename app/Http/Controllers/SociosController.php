@@ -29,8 +29,8 @@ class SociosController extends Controller
      */
 
      //Mostrar lista de socios
-    public function show_socios()
-    {
+    public function show_socios(){
+
         $deporte_id=Input::get('deporte_id');
 
         $deportes = Deporte::all();
@@ -44,6 +44,21 @@ class SociosController extends Controller
                     'title' => 'Socios'
                 ]);
     }
+
+    public function buscar_socios(){
+        $term = Input::get('term');
+
+        $results = array();
+
+        $queries = DB::table('socios')->where('nombre', 'LIKE', '%','.$term','%')->orWhere('apellido', 'LIKE', '%','.$term','%')->take(5)->get();
+
+        foreach ($queries as $query){
+          $results[] = ['id' => $query->id, 'value' => $query->nombre.' '.$query->apellido ];
+        }
+
+        return Response::json($results);
+    }
+
     //lista de socios historicos
     public function show_socios_historicos(){
       $deporte_id=Input::get('deporte_id');

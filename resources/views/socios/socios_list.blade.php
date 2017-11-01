@@ -1,7 +1,9 @@
 @extends ('layouts.app')
 
 @section ('content')
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+  
 <div class="x_panel">
     <div class="x_title">
         <h2><i class="fa fa-user" aria-hidden="true"></i> Socios </h2>
@@ -16,8 +18,15 @@
                 <div class="col-sm-12">
                     <div class="x_panel">
                         <div class="x_content">
+                            <label> Socio </label>
+                                <form class="form-inline" action="/socios" method="GET">
+                                    <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/socios/autocomplete" autocomplete="off">
+                                     <a class="btn btn-danger" href="/socios"><i class="fa fa-times"></i></a>
+                                </form>
                             <form class="form-inline" action="/socios" method="GET">
+                                
                                 <div class="form-group">
+                                    
                                     <label for="ex3">Tipo</label>
                                 </div>
                                 <div class="form-group">
@@ -140,6 +149,7 @@
     <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
     <script src="/js/tabladinamica.js"></script>
+    <script src="/js/autocompletado.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

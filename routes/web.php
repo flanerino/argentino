@@ -45,17 +45,18 @@ Route::prefix('deportes')->group(function(){
 });
 
 // Rutas de la parte SOCIOS
+Route::name('socios_search')->get('/socios/autocomplete', 'SociosController@search_socios');
 Route::name('update_socio_path')->post('/socios/{socio}','SociosController@update_socio');
 Route::name('delete_socio_path')->delete('/socios/{socio}', 'SociosController@delete_socio');
 Route::name('edit_socio_path')->get('/socios/edit/{socio}','SociosController@edit_socio');
 Route::name('create_socio_path')->get('/socios/create', 'SociosController@create_socio');
 Route::name('store_socio_path')->post('/socios', 'SociosController@store_socio');
-//Route::name('socio_path')->get('/socios/{socio}', 'SociosController@show_socio');
 Route::name('socios_path')->get('/socios', 'SociosController@show_socios');
 // SOCIOS HISTORICOS
 Route::name('socios_historicos_path')->get('/socios/historicos', 'SociosController@show_socios_historicos');
 Route::name('restore_socio_path')->post('/socios/historicos/{socio}','SociosController@restore_socio');
 Route::name('socios_historicos_view_path')->get('/socios/historicos/{socio}','SociosController@view_socio_historico');
+
 
 
 
