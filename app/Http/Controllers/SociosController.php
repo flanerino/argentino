@@ -9,6 +9,8 @@ use Argentino\Http\Requests\CreateSocioRequest;
 use Argentino\Http\Requests\UpdateSocioRequest;
 use Illuminate\Support\Facades\Input;
 use Dompdf\Dompdf;
+use DB;
+use Response;
 
 class SociosController extends Controller
 {
@@ -46,14 +48,19 @@ class SociosController extends Controller
     }
 
     public function buscar_socios(){
-        $term = Input::get('term');
+
+        $search = '%' . $_GET['term'] . '%';
 
         $results = array();
 
-        $queries = DB::table('socios')->where('nombre', 'LIKE', '%','.$term','%')->orWhere('apellido', 'LIKE', '%','.$term','%')->take(5)->get();
+        $queries = DB::table('socios')->where('nombre', 'LIKE', $search)->orWhere('apellido', 'LIKE', $search)->take(5)->get();
 
-        foreach ($queries as $query){
-          $results[] = ['id' => $query->id, 'value' => $query->nombre.' '.$query->apellido ];
+        if($queries){
+          foreach ($queries as $query){
+           $results[] = ['id' => $query->id, 'value' => $query->id.' | '. $query->nombre.' '.$query->apellido ];
+          }  
+        }else{
+          $results[] = [ 'id' => null, 'value' => 'no hay resultados'];
         }
 
         return Response::json($results);

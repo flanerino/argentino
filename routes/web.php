@@ -45,7 +45,7 @@ Route::prefix('deportes')->group(function(){
 });
 
 // Rutas de la parte SOCIOS
-Route::name('socios_search')->get('/socios/autocomplete', 'SociosController@search_socios');
+Route::name('socios_search')->get('/socios/autocomplete', 'SociosController@buscar_socios');
 Route::name('update_socio_path')->post('/socios/{socio}','SociosController@update_socio');
 Route::name('delete_socio_path')->delete('/socios/{socio}', 'SociosController@delete_socio');
 Route::name('edit_socio_path')->get('/socios/edit/{socio}','SociosController@edit_socio');

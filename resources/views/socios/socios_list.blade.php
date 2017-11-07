@@ -15,12 +15,13 @@
                 <div class="col-sm-12">
                     <div class="x_panel">
                         <div class="x_content">
-                            <label> Socio </label>
+
+                            <div class="form-group">
+                                <label for="ex3">Nombre</label>
+                            </div>
                                 <form class="form-inline" action="/socios" method="GET">
-                                    <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/socios/autocomplete" autocomplete="off">
+                                    <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/socios/autocomplete">
                                      <a class="btn btn-danger" href="/socios"><i class="fa fa-times"></i></a>
-                                </form>
-                            <form class="form-inline" action="/socios" method="GET">
                                 
                                 <div class="form-group">
                                     
