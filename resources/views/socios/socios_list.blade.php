@@ -17,12 +17,12 @@
                         <div class="x_content">
 
                             <div class="form-group">
-                                <label for="ex3">Nombre</label>
+                                <label for="ex3">Socio</label>
                             </div>
                                 <form class="form-inline" action="/socios" method="GET">
                                     <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/socios/autocomplete">
                                      <a class="btn btn-danger" href="/socios"><i class="fa fa-times"></i></a>
-                                
+                                </form>
                                 <div class="form-group">
                                     
                                     <label for="ex3">Tipo</label>

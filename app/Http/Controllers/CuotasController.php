@@ -13,6 +13,7 @@ use Argentino\Http\Requests\UpdateCuotaRequest;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 use DateTime;
+use Response;
 
 class CuotasController extends Controller
 {
@@ -42,6 +43,26 @@ class CuotasController extends Controller
     $deportes = Deporte::all();
 
     return view ('cuotas.cuota_create')->with(['cuota' => $cuota, 'deportes' => $deportes,'socios' => $socios]);
+    }
+
+//Autocompletado
+    public function buscar_socios(){
+
+        $search = '%' . $_GET['term'] . '%';
+
+        $results = array();
+
+        $queries = DB::table('socios')->where('nombre', 'LIKE', $search)->orWhere('apellido', 'LIKE', $search)->take(5)->get();
+
+        if($queries){
+          foreach ($queries as $query){
+           $results[] = ['id' => $query->id, 'value' => $query->nombre.' '.$query->apellido ];
+          }  
+        }else{
+          $results[] = [ 'id' => null, 'value' => 'no hay resultados'];
+        }
+
+        return Response::json($results);
     }
 
 //Editar Cuotas (vista)

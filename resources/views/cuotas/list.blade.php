@@ -50,8 +50,8 @@
                         <div class="x_content">
                           <form class="form-inline" action="/cuotas" method="GET">
                               <div class="form-group">
-                                  <label for="middle-name">Apellido</label>
-                                  <input id="apellido" name="apellido" class="form-control" type="text" value="">
+                                  <label for="middle-name">Socio</label>
+                                  <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/cuotas/autocomplete">
                               </div>
                               <div class="form-group">
                                   <label for="deporte">Deporte</label>
@@ -200,6 +200,7 @@
     <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
     <script src="/js/tabladinamica.js"></script>
+    <script src="/js/autocompletado.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){

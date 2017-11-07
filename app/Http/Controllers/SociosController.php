@@ -34,10 +34,15 @@ class SociosController extends Controller
     public function show_socios(){
 
         $deporte_id=Input::get('deporte_id');
-
+        $autocomplete = Input::get('autocomplete');
+        dd($autocomplete);
         $deportes = Deporte::all();
-
-        $socios = Socio::where('activo', 1)->filter($deporte_id)->orderBy('id', 'asc')->get();
+        if($autocomplete){
+          $socios = Socio::where('activo', 1)->filter($autocomplete)->orderBy('id', 'asc')->get();
+        }else{
+          $socios = Socio::where('activo', 1)->filter($deporte_id)->orderBy('id', 'asc')->get();  
+        }
+        
 
         return view('socios/socios_list')->with(
                 [   'socios' => $socios,
@@ -57,7 +62,7 @@ class SociosController extends Controller
 
         if($queries){
           foreach ($queries as $query){
-           $results[] = ['id' => $query->id, 'value' => $query->id.' | '. $query->nombre.' '.$query->apellido ];
+           $results[] = ['id' => $query->id, 'value' => $query->nombre.' '.$query->apellido ];
           }  
         }else{
           $results[] = [ 'id' => null, 'value' => 'no hay resultados'];

@@ -61,6 +61,7 @@ Route::name('socios_historicos_view_path')->get('/socios/historicos/{socio}','So
 
 
 // Rutas de la parte CUOTAS
+Route::name('cuotas_search')->get('/cuotas/autocomplete', 'CuotasController@buscar_socios');
 Route::name('generate_cuotas_path')->post('/cuotas-generate','CuotasController@generate_cuotas');
 Route::name('cuotas_path')->get('/cuotas', 'CuotasController@show_cuotas');
 Route::name('create_cuota_path')->get('/cuotas/create', 'CuotasController@create_cuota');
