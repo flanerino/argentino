@@ -49,10 +49,12 @@
                     <div class="x_panel">
                         <div class="x_content">
                           <form class="form-inline" action="/cuotas" method="GET">
+                              <?/*
                               <div class="form-group">
                                   <label for="middle-name">Socio</label>
                                   <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/cuotas/autocomplete">
                               </div>
+                              */?>
                               <div class="form-group">
                                   <label for="deporte">Deporte</label>
                                   <select id="deporte" name="deporte" class="form-control">

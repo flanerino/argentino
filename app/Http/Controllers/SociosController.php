@@ -35,7 +35,7 @@ class SociosController extends Controller
 
         $deporte_id=Input::get('deporte_id');
         $autocomplete = Input::get('autocomplete');
-        dd($autocomplete);
+
         $deportes = Deporte::all();
         if($autocomplete){
           $socios = Socio::where('activo', 1)->filter($autocomplete)->orderBy('id', 'asc')->get();

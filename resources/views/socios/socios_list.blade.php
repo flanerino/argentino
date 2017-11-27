@@ -19,21 +19,20 @@
                             <div class="form-group">
                                 <label for="ex3">Socio</label>
                             </div>
+                            <?/*
                                 <form class="form-inline" action="/socios" method="GET">
                                     <input id="autocomplete" name="autocomplete" class="form-control" type="text" data-autocomplete="/socios/autocomplete">
                                      <a class="btn btn-danger" href="/socios"><i class="fa fa-times"></i></a>
                                 </form>
-                                <div class="form-group">
-                                    
+                                */?>
+                                <div class="form-group">                                    
                                     <label for="ex3">Tipo</label>
                                 </div>
                                 <div class="form-group">
                                     <select name="deporte_id" class="form-control">
                                         <option value="">Seleccione un deporte</option>
                                         @foreach($deportes as $deporte)
-
                                             <option <?if($deporte_id==$deporte->id) echo 'selected';?> value="{{$deporte->id}}"><li>{{$deporte->nombreTree}}</li></option>
-
                                         @endforeach
                                     </select>
                                 </div>
